@@ -21,7 +21,13 @@
             </p>
         <h2>Contributing:</h2>
             <p>
-                More about this later...
+                If you're new and not sure where to begin, GitHub's <a href="https://help.github.com/">Help</a> pages are a good place to start. There are also quick start and setup information pages located in <a href="https://help.github.com/categories/bootcamp/">Bootcamp</a> and <a href="https://help.github.com/categories/setup">Setup</a>.
+            </p>
+            <p>
+                All commits in pull requests must be GPG signed. I know, I know... Positronikal is nobody. You're right, but better to start off the right way than to try and backtrack something months or years down the road. It's not as much of a pain as it sounds like and you know this if you're doing it already. If not, see the page on <a href="https://help.github.com/articles/signing-commits-with-gpg">signing commits</a>.
+            </p>
+            <p>
+                All contributors must have a signed Developer Certificate of Origin on file with Positronikal before any code is accepted or reviewed. This is related to the above paragraph and for the same reasons. If the code you submitted was written as a result of your job or you coded a significant portion during work hours or if any other circumstances exist that might give rise to your employer exercising a right to ownership at any time in the future, a DCO must be on file for them as well and signed by a competent authority within the organization (not yourself). Posi_DCO.md is available in this repository.
             </p>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
