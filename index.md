@@ -30,6 +30,8 @@
                 All contributors must have a signed Developer Certificate of Origin on file with Positronikal before any code is accepted or reviewed. This is related to the above paragraph and for the same reasons. If the code you submitted was written as a result of your job or you coded a significant portion during work hours or if any other circumstances exist that might give rise to your employer exercising a right to ownership at any time in the future, a DCO must be on file for them as well and signed by a competent authority within the organization (not yourself). Posi_DCO.md is available in this repository.
             </p>
 
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102603475-2"></script>
         <script>
