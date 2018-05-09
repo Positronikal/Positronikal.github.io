@@ -42,7 +42,7 @@
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'UA-102603475-2');
+            gtag('config', 'UA-102603475-3');
         </script>
 
     </body>
