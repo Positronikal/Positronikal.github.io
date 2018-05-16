@@ -8,6 +8,12 @@
             </p>
         <h2>Projects:</h2>
             <p>
+                <a href="https://github.com/Positronikal/CarnivoreLE">CarnivoreLE</a>
+                <blockquote>
+                    Part of the Carnivore Digital Forensic System, CarnivoreLE (Live Edition) captures live data, especially volatile data, from a running computer. This includes options to create a forensic logical image of the system RAM, home directory, and logs directory. Imaging is accomplished with Advanced Forensic Format 4 (AFF4). There are three different versions, one each for GNU/Linux, Macintosh, and Windows. See the section below titled <cite>Contributing</cite>.
+                </blockquote>
+            </p>
+            <p>
                 <a href="https://github.com/Positronikal/simpleBackup">simpleBackup</a>
                 <blockquote>
                     This is just as the name implies - a simple backup utility for GNU/Linux. It's written in bash and makes use of rsync and dialog. rsync is a fast, versatile, remote (and local) file copying tool. dialog displays dialog boxes from shell scripts. There is plenty of room to expand this project, add new dialog boxes, and make much more of rsync's capabilities. I've taken it as far as I care to, but I welcome other interested contributors. See the section below titled <cite>Contributing</cite>.
