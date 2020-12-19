@@ -4,13 +4,13 @@
     <body>
         <h1>Welcome to Positronikal on GitHub!</h1>
             <p>
-                Positronikal is the moniker I've used for several years for my digital projects. The majority of projects I intend to park here pertain to digital forensics and cyber investigation. That said, there will likely also be projects that don't directly pertain to these subject matter areas. I'll eventually move these back to my personal account at <a href="https://github.com/hoyt-harness">https://github.com/hoyt-harness</a>. The main projects I'm waiting on here pertain to the <cite>Carnivore Digital Forensic System</cite>, but there may be others. Other projects I follow, contribute to, and/or make use of some way appear as forks in my personal repositories linked above.
+                Positronikal is the moniker I've used for several years for my digital projects. The majority of projects I intend to park here pertain to digital forensics and cyber investigation. That said, there will likely also be projects that don't directly pertain to these subject matter areas. I'll continue to host public forks of other projects from my personal account at <a href="https://github.com/hoyt-harness">https://github.com/hoyt-harness</a>.
             </p>
         <h2>Projects:</h2>
             <p>
                 <a href="https://github.com/Positronikal/CarnivoreLE">CarnivoreLE</a>
                 <blockquote>
-                    Part of the Carnivore Digital Forensic System, CarnivoreLE (Live Edition) captures live data, especially volatile data, from a running computer. This includes options to create a forensic logical image of the system RAM, home directory, and logs directory. Imaging is accomplished with Advanced Forensic Format 4 (AFF4). There are three different versions, one each for GNU/Linux, Macintosh, and Windows. See the section below titled <cite>Contributing</cite>.
+                    This repository is slated for removal by the end of the 2020 calendar year. Any forks should be brought up to date with origin/master before midnight, December 31st. All CarnivoreLE code prior to this date, as well as existing code pertaining to any other part of the Carnivore project, will continue to be licensed under GPLv3. A place holder for the repository will be in place on January 1, 2021 and will remain for approximately three months before the repo is removed entirely. No new changes or pull requests will be accepted. The project will continue under the same name, but with different licensing, a different code base (primarily Golang), and will not be hosted publicly.
                 </blockquote>
             </p>
             <p>
