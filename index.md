@@ -10,7 +10,7 @@
             <p>
                 <a href="https://github.com/Positronikal/CarnivoreLE">CarnivoreLE</a>
                 <blockquote>
-                    This repository is slated for removal by the end of the 2020 calendar year. Any forks should be brought up to date with origin/master before midnight, December 31st. All CarnivoreLE code prior to this date, as well as existing code pertaining to any other part of the Carnivore project, will continue to be licensed under GPLv3. A place holder for the repository will be in place on January 1, 2021 and will remain for approximately three months before the repo is removed entirely. No new changes or pull requests will be accepted. The project will continue under the same name, but with different licensing, a different code base (primarily Golang), and will not be hosted publicly.
+                    This repository has been deprecated as of December 31, 2020 and exists as a placeholder only. All Carnivore code released prior to this date pertaining specifically to CarnivoreLE or any other part of the larger project will continue to be licensed under GPLv3. No new changes or pull requests will be accepted.
                 </blockquote>
             </p>
             <p>
