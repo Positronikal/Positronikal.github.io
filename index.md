@@ -20,9 +20,10 @@
                 </blockquote>
             </p>
              <p>
-                <a href="https://github.com/Positronikal/BugZapper">BugZapper</a>
+                <a href="https://github.com/Positronikal/montereyMacports">montereyMacports</a>
                 <blockquote>
-                    BugZapper is a bash debugger utility written in bash and inspired by <cite>Learning the bash shell</cite> by Cameron Newham and Bill Rosenblatt (O'Reilly, 2005). I highly suggest obtaining a copy of the reference book and getting comfortable with the material it contains before attempting to contribute to this project. The book's authors highlight other ways this utility can be extended. Those pull requests or any others seeking to improve it are welcome. See the section below titled <cite>Contributing</cite>.
+                    These shell utilities work on Macintosh macOS 12 Monterey to either automate the installation of MacPorts or upgrade MacPorts if an installation for an earlier version of macOS exists. Both utilities must be ran from sudo and will create a ~/bin/MacPorts directory to work from. In addition, they install a third utility in ~/bin to automate MacPorts updating (macports_updater.sh). The updater also must be ran from root. The install/upgrade utilities add ~/bin to your path envar, so updater can simply be called from a terminal. Both the install/update utilities can be further improved by combining them into a single script that determines at runtime if MacPorts is (1)
+installed and already the current version, (2) is installed, but not the current version, or (3) is not installed, then calling the appropriate functionality from there. Contributors/testers may find other areas of improvement. See the section below titled <cite>Contributing</cite>.
                 </blockquote>
             </p>
         <h2>Contributing:</h2>
