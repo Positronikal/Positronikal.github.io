@@ -16,7 +16,7 @@
             <p>
                 <a href="https://github.com/Positronikal/simpleBackup">simpleBackup</a>
                 <blockquote>
-                    This is just as the name implies - a simple backup utility for GNU/Linux. It's written in bash and makes use of rsync and dialog. rsync is a fast, versatile, remote (and local) file copying tool. dialog displays dialog boxes from shell scripts. There is plenty of room to expand this project, add new dialog boxes, and make much more of rsync's capabilities. I've taken it as far as I care to, but I welcome other interested contributors. See the section below titled <cite>Contributing</cite>.
+                    This is just as the name implies - a simple backup utility for Debian-based distros. It's written in bash and makes use of rsync and dialog. rsync is a fast, versatile, remote (and local) file copying tool. dialog displays dialog boxes from shell scripts. There is plenty of room to expand this project, add new dialog boxes, and make much more of rsync's capabilities. See the section below titled <cite>Contributing</cite>.
                 </blockquote>
             </p>
              <p>
