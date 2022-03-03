@@ -8,7 +8,7 @@
             </p>
         <h2>Projects:</h2>
             <p>
-				<a href="https://github.com/Positronikal/libewf-legacy-win">ewf-tools for Windows AMD64 CarnivoreLE</a>
+				<a href="https://github.com/Positronikal/libewf-legacy-win">ewf-tools for Windows AMD64</a>
 				<blockquote>
 					I forked the libyal/libewf-legacy repo, made all the necessary adjustments for a Windows AMD64 build using the included PowerShell scripts, upgraded the prerequisite files for Visual Studio 2022, built the supporting libraries and ewf-tools, then pushed the whole thing here. The README explains where the binaries are located and the original documentation details how to configure everything to build it yourself if you don't want to use the pre-builts. Otherwise, you can clone it or download the ZIP, add the appropriate path to your envars, and run the tools from any directory.
 				</blockquote>
