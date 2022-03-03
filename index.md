@@ -8,6 +8,12 @@
             </p>
         <h2>Projects:</h2>
             <p>
+				<a href="https://github.com/Positronikal/libewf-legacy-win">ewf-tools for Windows AMD64 CarnivoreLE</a>
+				<blockquote>
+					I forked the libyal/libewf-legacy repo, made all the necessary adjustments for a Windows AMD64 build using the included PowerShell scripts, upgraded the prerequisite files for Visual Studio 2022, built the supporting libraries and ewf-tools, then pushed the whole thing here. The README explains where the binaries are located and the original documentation details how to configure everything to build it yourself if you don't want to use the pre-builts. Otherwise, you can clone it or download the ZIP, add the appropriate path to your envars, and run the tools from any directory.
+				</blockquote>
+			</p>
+			<p>
                 <a href="https://github.com/Positronikal/CarnivoreLE">CarnivoreLE</a>
                 <blockquote>
                     This repository has been deprecated as of December 31, 2020 and exists as a placeholder only. All Carnivore code released prior to this date pertaining specifically to CarnivoreLE or any other part of the larger project will continue to be licensed under GPLv3. No new changes or pull requests will be accepted.
@@ -16,14 +22,13 @@
             <p>
                 <a href="https://github.com/Positronikal/simpleBackup">simpleBackup</a>
                 <blockquote>
-                    This is just as the name implies - a simple backup utility for Debian-based distros. It's written in bash and makes use of rsync and dialog. rsync is a fast, versatile, remote (and local) file copying tool. dialog displays dialog boxes from shell scripts. There is plenty of room to expand this project, add new dialog boxes, and make much more of rsync's capabilities. See the section below titled <cite>Contributing</cite>.
+					This is just as the name implies - a simple backup utility for Debian-based distros. It's written in bash and makes use of rsync and dialog. rsync is a fast, versatile, remote (and local) file copying tool. dialog displays dialog boxes from shell scripts. There is plenty of room to expand this project, add new dialog boxes, and make much more of rsync's capabilities. See the section below titled <cite>Contributing</cite>.
                 </blockquote>
             </p>
-             <p>
+            <p>
                 <a href="https://github.com/Positronikal/montereyMacports">montereyMacports</a>
                 <blockquote>
-                    These shell utilities work on Macintosh macOS 12 Monterey to either automate the installation of MacPorts or upgrade MacPorts if an installation for an earlier version of macOS exists. Both utilities must be ran from sudo and will create a ~/bin/MacPorts directory to work from. In addition, they install a third utility in ~/bin to automate MacPorts updating (macports_updater.sh). The updater also must be ran from root. The install/upgrade utilities add ~/bin to your path envar, so updater can simply be called from a terminal. Both the install/update utilities can be further improved by combining them into a single script that determines at runtime if MacPorts is (1)
-installed and already the current version, (2) is installed, but not the current version, or (3) is not installed, then calling the appropriate functionality from there. Contributors/testers may find other areas of improvement. See the section below titled <cite>Contributing</cite>.
+					These shell utilities work on Macintosh macOS 12 Monterey to either automate the installation of MacPorts or upgrade MacPorts if an installation for an earlier version of macOS exists. Both utilities must be ran from sudo and will create a ~/bin/MacPorts directory to work from. In addition, they install a third utility in ~/bin to automate MacPorts updating (macports_updater.sh). The updater also must be ran from root. The install/upgrade utilities add ~/bin to your path envar, so updater can simply be called from a terminal. Both the install/update utilities can be further improved by combining them into a single script that determines at runtime if MacPorts is (1) installed and already the current version, (2) is installed, but not the current version, or (3) is not installed, then calling the appropriate functionality from there. Contributors/testers may find other areas of improvement. See the section below titled <cite>Contributing</cite>.
                 </blockquote>
             </p>
         <h2>Contributing:</h2>
