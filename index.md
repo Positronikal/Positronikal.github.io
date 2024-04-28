@@ -13,7 +13,7 @@
     <body>
         <h1>Welcome to Positronikal on GitHub!</h1>
             <p>
-                My real name is Hoyt Harness, but Positronikal is the moniker I've used for several years for my digital projects. The majority of projects I intend to park here pertain to digital forensics and cyber investigation. That said, there will likely also be projects that don't directly pertain to these subject matter areas. I'll continue to host public forks of other projects from my personal account at <a href="https://github.com/hoyt-harness">https://github.com/hoyt-harness</a>.
+                This is the home page for digital projects. The majority of projects I intend to park here pertain to digital forensics and cyber investigation. That said, there will likely also be projects that don't directly pertain to these subject matter areas.
             </p>
         <h2>Projects:</h2>
             <p>
