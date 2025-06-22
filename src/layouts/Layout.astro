@@ -1,0 +1,294 @@
+---
+import '@styles/global.css';
+import Header from '@components/Header.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Positronikal - Digital Forensics & Cybersecurity Research' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Hoyt Harness (Positronikal)" />
+    <meta name="keywords" content="digital forensics, cybersecurity, investigation, research, DFIR, cyber investigation" />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-620GDDQLZB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-620GDDQLZB');
+    </script>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://positronikal.github.io/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://positronikal.github.io/social-preview.png" />
+    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://positronikal.github.io/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://positronikal.github.io/social-preview.png" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+  </head>
+  <body class="animate-terminal-startup">
+    <div class="container mx-auto px-4 pt-20 pb-10">
+      <Header />
+      <main class="mt-8 animate-fade-in-slow">
+        <slot />
+      </main>
+    </div>
+    
+    <!-- Terminal CLI System -->
+    <script>
+      // Initialize terminal history and global variables
+      window.terminalHistory = window.terminalHistory || [];
+      window.positronikalData = {
+        user: 'positronikal',
+        host: 'github.io',
+        currentPath: '/',
+        bootTime: new Date().toISOString()
+      };
+      
+      // Import and initialize command system
+      import('../commands.js').then(({ commandRegistry, textOutput, errorOutput }) => {
+        const terminalInput = document.getElementById('terminal-input');
+        const terminalOutput = document.getElementById('terminal-output');
+        let historyIndex = -1;
+        
+        if (!terminalInput || !terminalOutput) return;
+        
+        // Focus management
+        terminalInput.focus();
+        
+        // Boot sequence simulation
+        if (sessionStorage.getItem('positronikal-booted') !== 'true') {
+          setTimeout(() => {
+            const bootElement = document.createElement('div');
+            bootElement.className = 'pl-5 mb-6 text-terminal-green animate-fade-in font-mono text-sm';
+            bootElement.innerHTML = `
+              <div class="mb-2">Positronikal Terminal v1.0.0 - Digital Forensics Platform</div>
+              <div class="mb-2">Boot time: ${new Date().toLocaleString()}</div>
+              <div class="mb-2">Security: GPG signatures enforced</div>
+              <div class="mb-4 text-terminal-yellow">Type 'help' for available commands</div>
+            `;
+            terminalOutput.appendChild(bootElement);
+            sessionStorage.setItem('positronikal-booted', 'true');
+          }, 500);
+        }
+        
+        // Command processing function
+        async function processCommand(commandStr) {
+          if (!commandStr.trim()) return;
+          
+          // Add to history
+          window.terminalHistory.push(commandStr);
+          historyIndex = window.terminalHistory.length;
+          
+          // Parse command and arguments
+          const parts = commandStr.trim().split(' ');
+          const command = parts[0].toLowerCase();
+          const args = parts.slice(1);
+          
+          // Create command prompt display
+          const promptElement = document.createElement('div');
+          promptElement.className = 'flex items-start mb-4';
+          promptElement.innerHTML = `
+            <span class="text-terminal-green">${window.positronikalData.user}@${window.positronikalData.host}</span>
+            <span class="text-terminal-gray">:</span>
+            <span class="text-terminal-blue">${window.positronikalData.currentPath}</span>
+            <span class="text-terminal-gray">$</span>
+            <span class="terminal-command ml-2">${commandStr}</span>
+          `;
+          
+          terminalOutput.appendChild(promptElement);
+          
+          // Process command
+          let output = '';
+          
+          if (commandRegistry[command]) {
+            try {
+              output = await commandRegistry[command].execute(args);
+            } catch (error) {
+              output = errorOutput(`Error executing command: ${error.message}`);
+            }
+          } else {
+            output = errorOutput(`Command not found: ${command}. Type 'help' for available commands.`);
+          }
+          
+          // Display output
+          if (output) {
+            const outputElement = document.createElement('div');
+            outputElement.className = 'pl-5 mb-6 text-terminal-green animate-fade-in';
+            outputElement.innerHTML = output;
+            terminalOutput.appendChild(outputElement);
+          }
+          
+          // Scroll to bottom and clear input
+          terminalOutput.scrollTop = terminalOutput.scrollHeight;
+          terminalInput.value = '';
+        }
+        
+        // Keyboard event handling
+        terminalInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            const command = terminalInput.value;
+            processCommand(command);
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (historyIndex > 0) {
+              historyIndex--;
+              terminalInput.value = window.terminalHistory[historyIndex];
+            }
+          } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (historyIndex < window.terminalHistory.length - 1) {
+              historyIndex++;
+              terminalInput.value = window.terminalHistory[historyIndex];
+            } else {
+              historyIndex = window.terminalHistory.length;
+              terminalInput.value = '';
+            }
+          } else if (e.key === 'Tab') {
+            e.preventDefault();
+            // Tab completion
+            const input = terminalInput.value.toLowerCase();
+            const availableCommands = Object.keys(commandRegistry);
+            const matchingCommands = availableCommands.filter(cmd => cmd.startsWith(input));
+            
+            if (matchingCommands.length === 1) {
+              terminalInput.value = matchingCommands[0];
+            } else if (matchingCommands.length > 1 && input) {
+              // Find common prefix
+              let commonPrefix = input;
+              let position = input.length;
+              let allMatch = true;
+              
+              while (allMatch && position < matchingCommands[0].length) {
+                const char = matchingCommands[0][position];
+                for (let i = 1; i < matchingCommands.length; i++) {
+                  if (position >= matchingCommands[i].length || matchingCommands[i][position] !== char) {
+                    allMatch = false;
+                    break;
+                  }
+                }
+                
+                if (allMatch) {
+                  commonPrefix += char;
+                  position++;
+                }
+              }
+              
+              terminalInput.value = commonPrefix;
+              
+              // Show matching commands
+              const promptElement = document.createElement('div');
+              promptElement.className = 'flex items-start mb-4';
+              promptElement.innerHTML = `
+                <span class="text-terminal-green">${window.positronikalData.user}@${window.positronikalData.host}</span>
+                <span class="text-terminal-gray">:</span>
+                <span class="text-terminal-blue">${window.positronikalData.currentPath}</span>
+                <span class="text-terminal-gray">$</span>
+                <span class="terminal-command ml-2">${input}</span>
+              `;
+              
+              const outputElement = document.createElement('div');
+              outputElement.className = 'pl-5 mb-6 text-terminal-green';
+              outputElement.innerHTML = matchingCommands.join('  ');
+              
+              terminalOutput.appendChild(promptElement);
+              terminalOutput.appendChild(outputElement);
+              terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            }
+          } else if (e.key === 'l' && e.ctrlKey) {
+            // Ctrl+L to clear terminal
+            e.preventDefault();
+            terminalOutput.innerHTML = '';
+          }
+        });
+        
+        // Keep focus on terminal input
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('a') && !e.target.closest('button')) {
+            terminalInput.focus();
+          }
+        });
+        
+        // Handle page visibility changes
+        document.addEventListener('visibilitychange', () => {
+          if (!document.hidden) {
+            terminalInput.focus();
+          }
+        });
+        
+      }).catch(error => {
+        console.error('Failed to load command system:', error);
+      });
+      
+      // Matrix rain effect (subtle background animation)
+      function createMatrixRain() {
+        const chars = '01';
+        const matrix = document.createElement('div');
+        matrix.className = 'fixed inset-0 pointer-events-none z-10 opacity-5';
+        matrix.style.background = 'transparent';
+        
+        for (let i = 0; i < 20; i++) {
+          const column = document.createElement('div');
+          column.className = 'absolute text-terminal-matrix-green font-mono text-xs animate-matrix-rain';
+          column.style.left = Math.random() * 100 + '%';
+          column.style.animationDuration = (Math.random() * 3 + 2) + 's';
+          column.style.animationDelay = Math.random() * 2 + 's';
+          
+          let columnText = '';
+          for (let j = 0; j < 20; j++) {
+            columnText += chars[Math.floor(Math.random() * chars.length)] + '\n';
+          }
+          column.textContent = columnText;
+          matrix.appendChild(column);
+        }
+        
+        document.body.appendChild(matrix);
+        
+        // Clean up after animation
+        setTimeout(() => {
+          if (matrix.parentNode) {
+            matrix.parentNode.removeChild(matrix);
+          }
+        }, 10000);
+      }
+      
+      // Initialize matrix effect occasionally
+      if (Math.random() < 0.3) {
+        setTimeout(createMatrixRain, 2000);
+      }
+    </script>
+  </body>
+</html>

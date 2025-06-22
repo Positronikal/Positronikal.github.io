@@ -1,0 +1,105 @@
+---
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout title="Projects - Positronikal Digital Forensics">
+  <div class="cli-window animate-terminal-startup">
+    <div class="cli-header">
+      <div class="cli-traffic-lights">
+        <div class="cli-traffic-light bg-red-500"></div>
+        <div class="cli-traffic-light bg-yellow-500"></div>
+        <div class="cli-traffic-light bg-green-500"></div>
+      </div>
+      <div class="text-terminal-green text-xs font-mono">Projects Directory</div>
+      <div class="w-16"></div>
+    </div>
+
+    <div class="cli-body">
+      <div class="terminal-welcome animate-fade-in">
+        <h1 class="text-terminal-yellow text-3xl font-bold mb-6">Digital Forensics Projects</h1>
+        
+        <div class="space-y-6">
+          <div class="project-card">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-terminal-white text-xl font-bold">libewf-legacy-win</h2>
+              <span class="project-status status-active">Active</span>
+            </div>
+            <p class="text-terminal-gray mb-4">
+              Expert Witness Format tools for Windows AMD64. Complete build environment 
+              with Visual Studio 2022 support and pre-built binaries.
+            </p>
+            <a href="https://github.com/Positronikal/libewf-legacy-win" 
+               class="project-link block mb-2">
+              → View Repository
+            </a>
+            <p class="text-xs text-terminal-cyan">
+              Forked from libyal/libewf-legacy with Windows-specific enhancements
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-terminal-white text-xl font-bold">simpleBackup</h2>
+              <span class="project-status status-active">Active</span>
+            </div>
+            <p class="text-terminal-gray mb-4">
+              Simple backup utility for Debian-based distros using rsync and dialog. 
+              Clean, efficient, and easily extensible.
+            </p>
+            <a href="https://github.com/Positronikal/simpleBackup" 
+               class="project-link block mb-2">
+              → View Repository
+            </a>
+            <p class="text-xs text-terminal-cyan">
+              Bash-based with room for community expansion
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-terminal-white text-xl font-bold">macportsAssistant</h2>
+              <span class="project-status status-maintenance">Maintenance</span>
+            </div>
+            <p class="text-terminal-gray mb-4">
+              macOS version-agnostic MacPorts installation and upgrade automation. 
+              Evolved from montereyMacports.
+            </p>
+            <a href="https://github.com/Positronikal/macportsAssistant" 
+               class="project-link block mb-2">
+              → View Repository
+            </a>
+            <p class="text-xs text-terminal-cyan">
+              Tested on macOS Ventura, backward compatible
+            </p>
+          </div>
+
+          <div class="project-card opacity-60">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-terminal-white text-xl font-bold">CarnivoreLE</h2>
+              <span class="project-status status-deprecated">Deprecated</span>
+            </div>
+            <p class="text-terminal-gray mb-4">
+              Historical network packet capture tool. Deprecated as of December 31, 2020. 
+              Maintained for reference only.
+            </p>
+            <a href="https://github.com/Positronikal/CarnivoreLE" 
+               class="project-link block mb-2">
+              → View Archive
+            </a>
+            <p class="text-xs text-terminal-error-red">
+              No new changes or pull requests accepted
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-terminal-forensics-blue bg-opacity-20 border border-terminal-forensics-blue border-opacity-30 rounded">
+          <p class="text-terminal-cyan text-sm">
+            💡 <strong>Terminal Commands:</strong> Use <code class="text-terminal-yellow">ewftools</code>, 
+            <code class="text-terminal-yellow">backup</code>, <code class="text-terminal-yellow">macports</code>, 
+            or <code class="text-terminal-yellow">carnivore</code> in the terminal for detailed information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

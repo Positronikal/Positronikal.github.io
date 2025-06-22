@@ -1,0 +1,281 @@
+---
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout title="Positronikal - Digital Forensics & Cybersecurity Research">
+  <div class="cli-window animate-terminal-startup">
+    <!-- Terminal Header -->
+    <div class="cli-header">
+      <div class="cli-traffic-lights">
+        <div class="cli-traffic-light bg-red-500"></div>
+        <div class="cli-traffic-light bg-yellow-500"></div>
+        <div class="cli-traffic-light bg-green-500"></div>
+      </div>
+      <div class="text-terminal-green text-xs font-mono">Positronikal Terminal v1.0.0</div>
+      <div class="w-16"></div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="cli-body">
+      <!-- Welcome Message -->
+      <div class="terminal-welcome animate-fade-in">
+        <div class="ascii-art text-terminal-matrix-green mb-6">
+██████╗  ██████╗ ███████╗██╗████████╗██████╗  ██████╗ ███╗   ██╗██╗██╗  ██╗ █████╗ ██╗     
+██╔══██╗██╔═══██╗██╔════╝██║╚══██╔══╝██╔══██╗██╔═══██╗████╗  ██║██║██║ ██╔╝██╔══██╗██║     
+██████╔╝██║   ██║███████╗██║   ██║   ██████╔╝██║   ██║██╔██╗ ██║██║█████╔╝ ███████║██║     
+██╔═══╝ ██║   ██║╚════██║██║   ██║   ██╔══██╗██║   ██║██║╚██╗██║██║██╔═██╗ ██╔══██║██║     
+██║     ╚██████╔╝███████║██║   ██║   ██║  ██║╚██████╔╝██║ ╚████║██║██║  ██╗██║  ██║███████╗
+╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+        </div>
+
+        <h1 class="text-terminal-yellow text-3xl md:text-4xl font-bold mb-6 glitch" data-text="Welcome to Positronikal">
+          Welcome to Positronikal
+        </h1>
+
+        <div class="space-y-6">
+          <!-- Introduction -->
+          <div class="cyber-card">
+            <p class="text-terminal-white text-lg leading-relaxed">
+              Welcome to <span class="text-terminal-yellow font-bold">Positronikal</span> on GitHub! 
+              My real name is <span class="text-terminal-cyan">Hoyt Harness</span>, but Positronikal 
+              is the moniker I've used for several years for my digital projects.
+            </p>
+            
+            <p class="text-terminal-gray mt-4">
+              The majority of projects I host here pertain to <span class="text-terminal-matrix-green">digital forensics</span> 
+              and <span class="text-terminal-matrix-green">cyber investigation</span>. That said, there will likely 
+              also be projects that don't directly pertain to these subject matter areas.
+            </p>
+
+            <div class="mt-4 p-3 bg-terminal-info-cyan bg-opacity-20 border border-terminal-info-cyan border-opacity-30 rounded">
+              <p class="text-terminal-info-cyan text-sm">
+                <strong>Note:</strong> I continue to host public forks of other projects from my personal account at 
+                <a href="https://github.com/hoyt-harness" class="text-terminal-yellow hover:text-terminal-white">
+                  github.com/hoyt-harness
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Featured Projects Section -->
+          <div class="cyber-card">
+            <h2 class="text-terminal-yellow text-2xl font-bold mb-4 flex items-center">
+              <span class="text-terminal-matrix-green mr-2">🔍</span>
+              Featured Projects
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- EWF Tools -->
+              <div class="project-card">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-terminal-white font-bold">libewf-legacy-win</h3>
+                  <span class="project-status status-active">Active</span>
+                </div>
+                <p class="text-terminal-gray text-sm mb-3">
+                  Expert Witness Format tools for Windows AMD64. Complete build environment 
+                  with Visual Studio 2022 support and pre-built binaries.
+                </p>
+                <div class="space-y-2">
+                  <a href="https://github.com/Positronikal/libewf-legacy-win" 
+                     class="project-link block">
+                    → View Repository
+                  </a>
+                  <p class="text-xs text-terminal-cyan">
+                    Forked from libyal/libewf-legacy with Windows-specific enhancements
+                  </p>
+                </div>
+              </div>
+
+              <!-- Simple Backup -->
+              <div class="project-card">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-terminal-white font-bold">simpleBackup</h3>
+                  <span class="project-status status-active">Active</span>
+                </div>
+                <p class="text-terminal-gray text-sm mb-3">
+                  Simple backup utility for Debian-based distros using rsync and dialog. 
+                  Clean, efficient, and easily extensible.
+                </p>
+                <div class="space-y-2">
+                  <a href="https://github.com/Positronikal/simpleBackup" 
+                     class="project-link block">
+                    → View Repository
+                  </a>
+                  <p class="text-xs text-terminal-cyan">
+                    Bash-based with room for community expansion
+                  </p>
+                </div>
+              </div>
+
+              <!-- MacPorts Assistant -->
+              <div class="project-card">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-terminal-white font-bold">macportsAssistant</h3>
+                  <span class="project-status status-maintenance">Maintenance</span>
+                </div>
+                <p class="text-terminal-gray text-sm mb-3">
+                  macOS version-agnostic MacPorts installation and upgrade automation. 
+                  Evolved from montereyMacports.
+                </p>
+                <div class="space-y-2">
+                  <a href="https://github.com/Positronikal/macportsAssistant" 
+                     class="project-link block">
+                    → View Repository
+                  </a>
+                  <p class="text-xs text-terminal-cyan">
+                    Tested on macOS Ventura, backward compatible
+                  </p>
+                </div>
+              </div>
+
+              <!-- CarnivoreLE -->
+              <div class="project-card opacity-60">
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-terminal-white font-bold">CarnivoreLE</h3>
+                  <span class="project-status status-deprecated">Deprecated</span>
+                </div>
+                <p class="text-terminal-gray text-sm mb-3">
+                  Historical network packet capture tool. Deprecated as of December 31, 2020. 
+                  Maintained for reference only.
+                </p>
+                <div class="space-y-2">
+                  <a href="https://github.com/Positronikal/CarnivoreLE" 
+                     class="project-link block">
+                    → View Archive
+                  </a>
+                  <p class="text-xs text-terminal-error-red">
+                    No new changes or pull requests accepted
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-terminal-forensics-blue bg-opacity-20 border border-terminal-forensics-blue border-opacity-30 rounded">
+              <p class="text-terminal-cyan text-sm">
+                💡 <strong>Pro tip:</strong> Type <code class="text-terminal-yellow">projects</code> in the terminal above 
+                for detailed project information, or use commands like <code class="text-terminal-yellow">ewftools</code>, 
+                <code class="text-terminal-yellow">backup</code>, etc.
+              </p>
+            </div>
+          </div>
+
+          <!-- Contributing Section -->
+          <div class="cyber-card">
+            <h2 class="text-terminal-yellow text-2xl font-bold mb-4 flex items-center">
+              <span class="text-terminal-matrix-green mr-2">🤝</span>
+              Contributing
+            </h2>
+
+            <div class="space-y-4">
+              <div class="security-alert">
+                <h3 class="text-terminal-error-red font-bold mb-2">🔐 Security Requirements</h3>
+                <ul class="list-disc list-inside space-y-1 text-terminal-white text-sm">
+                  <li><strong>GPG signatures required:</strong> All commits in pull requests must be GPG signed</li>
+                  <li><strong>DCO compliance:</strong> Developer Certificate of Origin must be on file</li>
+                  <li><strong>Key verification:</strong> Use of a keyserver is highly recommended</li>
+                </ul>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h3 class="text-terminal-matrix-green font-bold mb-2">Getting Started:</h3>
+                  <ul class="list-disc list-inside space-y-1 text-terminal-gray text-sm">
+                    <li><a href="https://help.github.com/" class="text-terminal-yellow">GitHub Help</a> pages</li>
+                    <li><a href="https://help.github.com/categories/bootcamp/" class="text-terminal-yellow">Bootcamp</a> quick start</li>
+                    <li><a href="https://help.github.com/categories/setup" class="text-terminal-yellow">Setup</a> information</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="text-terminal-matrix-green font-bold mb-2">Standards:</h3>
+                  <ul class="list-disc list-inside space-y-1 text-terminal-gray text-sm">
+                    <li><a href="https://www.gnu.org/prep/standards/" class="text-terminal-yellow">GNU Coding Standards</a></li>
+                    <li><a href="http://catb.org/esr/writings/taoup/html/" class="text-terminal-yellow">UNIX Philosophy</a></li>
+                    <li>Clean, documented code</li>
+                    <li>Security-first approach</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="gpg-signature">
+                <h3 class="text-terminal-forensics-blue font-bold mb-2">🔑 GPG Public Key</h3>
+                <p class="text-terminal-gray text-sm">
+                  My public key (Hoyt Harness) can be retrieved from MIT's keyserver at 
+                  <a href="https://pgp.mit.edu/" class="text-terminal-yellow">pgp.mit.edu</a>. 
+                  Use <code class="text-terminal-cyan">gpg</code> command in the terminal for detailed information.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terminal Usage Tips -->
+          <div class="cyber-card">
+            <h2 class="text-terminal-yellow text-2xl font-bold mb-4 flex items-center">
+              <span class="text-terminal-matrix-green mr-2">💻</span>
+              Terminal Commands
+            </h2>
+
+            <p class="text-terminal-white mb-4">
+              This site features a fully interactive terminal interface. Try these commands:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-sm">
+              <div>
+                <h4 class="text-terminal-cyan font-bold mb-2">Information:</h4>
+                <ul class="space-y-1 text-terminal-gray">
+                  <li><code class="text-terminal-yellow">help</code> - All commands</li>
+                  <li><code class="text-terminal-yellow">about</code> - About me</li>
+                  <li><code class="text-terminal-yellow">whoami</code> - User info</li>
+                  <li><code class="text-terminal-yellow">neofetch</code> - System info</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="text-terminal-cyan font-bold mb-2">Projects:</h4>
+                <ul class="space-y-1 text-terminal-gray">
+                  <li><code class="text-terminal-yellow">projects</code> - List all</li>
+                  <li><code class="text-terminal-yellow">ewftools</code> - EWF details</li>
+                  <li><code class="text-terminal-yellow">backup</code> - Backup tool</li>
+                  <li><code class="text-terminal-yellow">macports</code> - MacPorts</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="text-terminal-cyan font-bold mb-2">Security:</h4>
+                <ul class="space-y-1 text-terminal-gray">
+                  <li><code class="text-terminal-yellow">gpg</code> - GPG info</li>
+                  <li><code class="text-terminal-yellow">dco</code> - DCO requirements</li>
+                  <li><code class="text-terminal-yellow">security</code> - Policies</li>
+                  <li><code class="text-terminal-yellow">contact</code> - Contact info</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3 bg-terminal-matrix-green bg-opacity-10 border border-terminal-matrix-green border-opacity-30 rounded">
+              <p class="text-terminal-matrix-green text-sm">
+                🎯 <strong>Keyboard shortcuts:</strong> Tab for completion, ↑/↓ for history, Ctrl+L to clear, Ctrl+` to focus terminal
+              </p>
+            </div>
+          </div>
+
+          <!-- License -->
+          <div class="mt-8 text-center">
+            <div class="inline-flex items-center space-x-2">
+              <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                <img alt="Creative Commons License" 
+                     class="border-0" 
+                     src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+              </a>
+              <span class="text-terminal-gray text-sm">
+                This work is licensed under a 
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" class="text-terminal-yellow">
+                  Creative Commons Attribution 4.0 International License
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

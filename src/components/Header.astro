@@ -1,0 +1,178 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.split('/')[1];
+
+const navigation = [
+  { name: 'Projects', path: 'projects', description: 'Digital forensics tools and research' },
+  { name: 'Documentation', path: 'docs', description: 'Technical guides and tutorials' },
+  { name: 'About', path: 'about', description: 'Background and contact information' },
+];
+---
+
+<header class="terminal-header">
+  <div class="container mx-auto px-4">
+    <div class="py-3">
+      <!-- Terminal prompt navigation -->
+      <div class="text-terminal-green font-cyber text-sm md:text-base">
+        <div class="flex flex-wrap items-center">
+          <!-- User info and navigation -->
+          <span class="mr-1 text-terminal-matrix-green">┌─[</span>
+          <span class="text-terminal-yellow font-bold">positronikal</span>
+          <span class="text-terminal-gray">@</span>
+          <span class="text-terminal-cyan">github.io</span>
+          <span class="text-terminal-matrix-green">]:</span>
+          
+          <!-- Navigation items -->
+          {navigation.map((item) => (
+            <a
+              href={`/${item.path}`}
+              class={`nav-item ${currentPath === item.path ? 'active' : ''}`}
+              title={item.description}
+            >
+              [{item.name}]
+            </a>
+          ))}
+          
+          <!-- Home link -->
+          <a 
+            href="/" 
+            class={`nav-item ${currentPath === '' ? 'active' : ''}`}
+            title="Return to main terminal"
+          >
+            [Home]
+          </a>
+          
+          <!-- Parent directory indicator -->
+          <span class="text-terminal-gray ml-2">[..]</span>
+        </div>
+      </div>
+      
+      <!-- Command line input -->
+      <div class="text-terminal-green font-cyber text-sm md:text-base mt-2">
+        <div class="flex items-center">
+          <span class="text-terminal-matrix-green">└─</span>
+          <span class="text-terminal-yellow mx-2">$</span>
+          <span class="text-terminal-white blink-cursor cursor-text">
+            <input
+              id="terminal-input"
+              type="text"
+              class="terminal-input w-32 md:w-64"
+              placeholder="Enter command..."
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Terminal command input"
+            />
+          </span>
+        </div>
+      </div>
+      
+      <!-- Status indicators -->
+      <div class="flex items-center justify-between mt-2 text-xs opacity-70">
+        <div class="flex items-center space-x-4">
+          <span class="text-terminal-green">●</span>
+          <span class="text-terminal-gray">Security: GPG enforced</span>
+          <span class="text-terminal-yellow">●</span>
+          <span class="text-terminal-gray">Status: Online</span>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-2 text-terminal-gray">
+          <span id="current-time"></span>
+          <span>UTC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Terminal output area (initially hidden, shown when commands are run) -->
+  <div 
+    id="terminal-output" 
+    class="hidden bg-terminal-black bg-opacity-95 border-t border-terminal-green border-opacity-30 max-h-64 overflow-y-auto p-4"
+  ></div>
+</header>
+
+<script>
+  // Update time display
+  function updateTime() {
+    const timeElement = document.getElementById('current-time');
+    if (timeElement) {
+      const now = new Date();
+      timeElement.textContent = now.toUTCString().slice(17, 25); // HH:MM:SS format
+    }
+  }
+  
+  // Update time every second
+  updateTime();
+  setInterval(updateTime, 1000);
+  
+  // Show/hide terminal output based on activity
+  const terminalOutput = document.getElementById('terminal-output');
+  const terminalInput = document.getElementById('terminal-input');
+  
+  if (terminalInput && terminalOutput) {
+    // Show terminal output when user starts typing or when there's content
+    terminalInput.addEventListener('focus', () => {
+      if (terminalOutput.children.length > 0) {
+        terminalOutput.classList.remove('hidden');
+      }
+    });
+    
+    // Observe changes to terminal output to show/hide appropriately
+    const observer = new MutationObserver(() => {
+      if (terminalOutput.children.length > 0) {
+        terminalOutput.classList.remove('hidden');
+      }
+    });
+    
+    observer.observe(terminalOutput, { childList: true });
+    
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      // Escape key to hide terminal output
+      if (e.key === 'Escape' && document.activeElement === terminalInput) {
+        terminalOutput.classList.add('hidden');
+        terminalInput.blur();
+      }
+      
+      // Focus terminal input with Ctrl+`
+      if (e.key === '`' && e.ctrlKey) {
+        e.preventDefault();
+        terminalInput.focus();
+        if (terminalOutput.children.length > 0) {
+          terminalOutput.classList.remove('hidden');
+        }
+      }
+    });
+  }
+  
+  // Easter egg: Konami code detection
+  let konamiCode = [];
+  const konamiSequence = [
+    'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+    'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+    'KeyB', 'KeyA'
+  ];
+  
+  document.addEventListener('keydown', (e) => {
+    konamiCode.push(e.code);
+    if (konamiCode.length > konamiSequence.length) {
+      konamiCode.shift();
+    }
+    
+    if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
+      // Trigger matrix effect
+      const matrixOverlay = document.createElement('div');
+      matrixOverlay.className = 'fixed inset-0 z-50 pointer-events-none';
+      matrixOverlay.style.background = 'radial-gradient(ellipse at center, rgba(0, 255, 65, 0.3) 0%, rgba(0, 0, 0, 0.7) 70%)';
+      
+      document.body.appendChild(matrixOverlay);
+      
+      setTimeout(() => {
+        if (matrixOverlay.parentNode) {
+          matrixOverlay.parentNode.removeChild(matrixOverlay);
+        }
+      }, 3000);
+      
+      konamiCode = [];
+    }
+  });
+</script>
