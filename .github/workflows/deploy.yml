@@ -1,17 +1,13 @@
----
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch:
-  # (Using a different branch name? Replace `main` with your branch’s
-  # name.)
+  # Trigger the workflow every time you push to the main branch
   push:
     branches: [main]
-  # Allows you to run this workflow manually from the Actions tab on
-  # GitHub:
+  # Allows you to run this workflow manually from the Actions tab on GitHub
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment:
+# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
@@ -23,14 +19,10 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        with:
-          # path: .  # root location of project in repo (optional)
-          # yamllint disable-line rule:line-length
-          # node-version: 20  # Node version (default = 20, optional)
-          # yamllint disable-line rule:line-length
-          # package-manager: pnpm  # Auto-detected from lockfile
+        # Auto-detects pnpm from pnpm-lock.yaml and uses packageManager version
 
   deploy:
     needs: build
