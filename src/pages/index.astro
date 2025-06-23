@@ -196,6 +196,30 @@ import Layout from '@layouts/Layout.astro';
                   </ul>
                 </div>
               </div>
+              
+              <div class="dco-requirement">
+                <h3 class="text-terminal-warning-amber font-bold mb-2 flex items-center">
+                  <span class="mr-2">📋</span>
+                  Developer Certificate of Origin (DCO)
+                </h3>
+                <p class="text-terminal-white text-sm mb-3">
+                  All contributors must sign and submit the Developer Certificate of Origin (DCO) before 
+                  their contributions can be accepted. The DCO is a legally binding statement that you 
+                  have the right to submit your contribution and agree to the project's licensing terms.
+                </p>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
+                  <a href="/Posi_DCO.md" 
+                     class="inline-flex items-center text-terminal-yellow hover:text-terminal-white font-bold transition-colors duration-200"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    <span class="mr-2">📄</span>
+                    Download DCO Template
+                  </a>
+                  <span class="text-terminal-gray text-xs">
+                    (Fill out and include with your first contribution)
+                  </span>
+                </div>
+              </div>
 
               <div class="gpg-signature">
                 <h3 class="text-terminal-forensics-blue font-bold mb-2">🔑 GPG Public Key</h3>
@@ -260,7 +284,7 @@ import Layout from '@layouts/Layout.astro';
 
           <!-- License -->
           <div class="mt-8 text-center">
-            <div class="inline-flex items-center space-x-2">
+            <div class="inline-flex items-center space-x-2 mb-4">
               <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
                 <img alt="Creative Commons License" 
                      class="border-0" 
@@ -272,6 +296,17 @@ import Layout from '@layouts/Layout.astro';
                   Creative Commons Attribution 4.0 International License
                 </a>
               </span>
+            </div>
+            
+            <!-- Attribution Credit -->
+            <div class="text-terminal-gray text-xs opacity-75">
+              <p class="mb-1">
+                Terminal interface concept inspired by the excellent work of 
+                <a href="https://github.com/m-mdy-m" class="text-terminal-cyan hover:text-terminal-white transition-colors duration-200">0x (m-mdy-m)</a>
+              </p>
+              <p>
+                Original portfolio: <a href="https://m-mdy-m.github.io/" class="text-terminal-cyan hover:text-terminal-white transition-colors duration-200">m-mdy-m.github.io</a>
+              </p>
             </div>
           </div>
         </div>

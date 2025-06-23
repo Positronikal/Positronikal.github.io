@@ -189,6 +189,10 @@ const commandRegistry = {
       return generateManOutput(command);
     },
   },
+  credits: {
+    description: 'Display credits and acknowledgments',
+    execute: async () => generateCreditsOutput(),
+  },
   matrix: {
     description: 'Activate matrix mode',
     execute: async () => {
@@ -225,7 +229,7 @@ function generateHelpOutput() {
     'Navigation': ['ls', 'cd', 'pwd', 'cat'],
     'Projects': ['projects', 'ewftools', 'carnivore', 'backup', 'macports'],
     'Security': ['gpg', 'dco', 'security'],
-    'Utilities': ['history', 'echo', 'date', 'github', 'contact', 'man'],
+    'Utilities': ['history', 'echo', 'date', 'github', 'contact', 'man', 'credits'],
     'Extras': ['matrix', 'hack']
   };
 
@@ -267,6 +271,60 @@ function generateAboutOutput() {
               <li>Open source contributor</li>
             </ul>
           </div>
+      
+      <div class="cyber-card">
+        <h3 class="text-terminal-matrix-green font-bold mb-3 flex items-center">
+          <span class="mr-2">🤖</span>
+          AI Development Partner
+        </h3>
+        <p class="text-terminal-white mb-3">
+          This cybersecurity platform was developed in collaboration with 
+          <a href="https://claude.ai" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Claude</a>, 
+          an AI assistant created by 
+          <a href="https://anthropic.com" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Anthropic</a>. 
+          From terminal roll-up functionality to GitHub Flow implementation, every feature was 
+          built through collaborative problem-solving and iterative development.
+        </p>
+        <div class="text-terminal-gray text-sm">
+          <p class="mb-2">
+            💻 <strong class="text-terminal-warning-amber">Technical contributions:</strong> 
+            Astro 5 implementation, terminal interface design, cybersecurity theming, 
+            GitHub Flow workflow, and repository migration strategy.
+          </p>
+          <p>
+            🎯 <strong class="text-terminal-warning-amber">Partnership approach:</strong> 
+            Collaborative development, technical mentoring, and respectful of your vision 
+            and 20+ years of cybersecurity expertise.
+          </p>
+        </div>
+      </div>
+      
+      <div class="cyber-card">
+        <h3 class="text-terminal-matrix-green font-bold mb-3 flex items-center">
+          <span class="mr-2">🤖</span>
+          AI Development Partner
+        </h3>
+        <p class="text-terminal-white mb-3">
+          This cybersecurity platform was developed in collaboration with 
+          <a href="https://claude.ai" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Claude</a>, 
+          an AI assistant created by 
+          <a href="https://anthropic.com" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Anthropic</a>. 
+          From terminal roll-up functionality to GitHub Flow implementation, every feature was 
+          built through collaborative problem-solving and iterative development.
+        </p>
+        <div class="text-terminal-gray text-sm">
+          <p class="mb-2">
+            💻 <strong class="text-terminal-warning-amber">Technical contributions:</strong> 
+            Astro 5 implementation, terminal interface design, cybersecurity theming, 
+            GitHub Flow workflow, and repository migration strategy.
+          </p>
+          <p>
+            🎯 <strong class="text-terminal-warning-amber">Partnership approach:</strong> 
+            Collaborative development, technical mentoring, and respectful of your vision 
+            and 20+ years of cybersecurity expertise.
+          </p>
+        </div>
+      </div>
           
           <div>
             <h3 class="text-terminal-matrix-green font-bold mb-2">Focus Areas:</h3>
@@ -383,6 +441,92 @@ function generateMacPortsOutput() { return `<p class="text-terminal-yellow">macp
 function generateGPGOutput() { return `<p class="text-terminal-yellow">GPG information would go here...</p>`; }
 function generateDCOOutput() { return `<p class="text-terminal-yellow">DCO information would go here...</p>`; }
 function generateSecurityOutput() { return `<p class="text-terminal-yellow">Security information would go here...</p>`; }
+function generateCreditsOutput() {
+  return `
+    <div class="space-y-4">
+      <h2 class="text-terminal-yellow text-2xl mb-4 flex items-center">
+        <span class="mr-2">🙏</span>
+        Credits & Acknowledgments
+      </h2>
+      
+      <div class="cyber-card">
+        <h3 class="text-terminal-matrix-green font-bold mb-3 flex items-center">
+          <span class="mr-2">💡</span>
+          Original Inspiration
+        </h3>
+        <p class="text-terminal-white mb-3">
+          The terminal interface concept and initial design inspiration for this cybersecurity 
+          platform came from the excellent portfolio work of 
+          <a href="https://github.com/m-mdy-m" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">0x (m-mdy-m)</a>.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
+          <a href="https://github.com/m-mdy-m/m-mdy-m.github.io" 
+             class="inline-flex items-center text-terminal-yellow hover:text-terminal-white transition-colors duration-200"
+             target="_blank" rel="noopener noreferrer">
+            <span class="mr-2">🔗</span>
+            Original Repository
+          </a>
+          <a href="https://m-mdy-m.github.io/" 
+             class="inline-flex items-center text-terminal-cyan hover:text-terminal-white transition-colors duration-200"
+             target="_blank" rel="noopener noreferrer">
+            <span class="mr-2">🌐</span>
+            Live Portfolio
+          </a>
+        </div>
+      </div>
+      
+      <div class="cyber-card">
+        <h3 class="text-terminal-matrix-green font-bold mb-3 flex items-center">
+          <span class="mr-2">🛠️</span>
+          Technology Stack
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h4 class="text-terminal-warning-amber font-bold mb-2">Frontend:</h4>
+            <ul class="list-disc list-inside space-y-1 text-terminal-gray text-sm">
+              <li>Astro 5 - Static site generation</li>
+              <li>TypeScript 5 - Type safety</li>
+              <li>Tailwind CSS 4 - Utility-first styling</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-terminal-warning-amber font-bold mb-2">Development:</h4>
+            <ul class="list-disc list-inside space-y-1 text-terminal-gray text-sm">
+              <li>pnpm - Package management</li>
+              <li>GitHub Pages - Hosting</li>
+              <li>Git - Version control</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cyber-card">
+        <h3 class="text-terminal-matrix-green font-bold mb-3 flex items-center">
+          <span class="mr-2">🏆</span>
+          Special Thanks
+        </h3>
+        <p class="text-terminal-white text-sm">
+          To the open source community, cybersecurity researchers, and digital forensics 
+          professionals who contribute to tools and knowledge that make our work possible.
+        </p>
+        <div class="mt-3 text-terminal-cyan text-xs">
+          <p>This platform was adapted and enhanced for digital forensics and cybersecurity research.</p>
+        </div>
+      </div>
+      
+      <div class="mt-4 p-3 bg-terminal-forensics-blue bg-opacity-20 border border-terminal-forensics-blue border-opacity-30 rounded">
+        <p class="text-terminal-info-cyan text-sm">
+          📜 Want to contribute? Check out our 
+          <span class="text-terminal-yellow font-bold">DCO requirements</span> and 
+          <span class="text-terminal-yellow font-bold">GPG signing policies</span> 
+          by running 'dco' and 'security' commands.
+        </p>
+      </div>
+    </div>
+  `;
+}
+
 function generateContactOutput() { return `<p class="text-terminal-yellow">Contact information would go here...</p>`; }
 function generateNeofetchOutput() {
   return `

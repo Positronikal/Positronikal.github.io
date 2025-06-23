@@ -434,4 +434,51 @@
   .license-badge {
     @apply inline-flex items-center px-2 py-1 text-xs font-bold bg-terminal-green bg-opacity-20 text-terminal-green border border-terminal-green rounded;
   }
+  
+  /* Terminal roll-up functionality */
+  #terminal-toggle {
+    @apply cursor-pointer select-none;
+    transition: all 0.2s ease;
+  }
+  
+  #terminal-toggle:hover {
+    @apply scale-105;
+    text-shadow: 0 0 8px currentColor;
+  }
+  
+  #terminal-toggle:active {
+    @apply scale-95;
+  }
+  
+  /* Terminal toggle container */
+  #terminal-toggle:hover + * {
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+  }
+  
+  #terminal-content {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  /* Enhanced traffic lights with subtle hover */
+  .cli-traffic-light {
+    transition: all 0.2s ease;
+  }
+  
+  .cli-traffic-light:hover {
+    @apply scale-110;
+    box-shadow: 0 0 8px currentColor;
+  }
+  
+  /* Terminal toggle box styling */
+  .terminal-toggle-box {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 255, 0, 0.1) 100%);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 0, 0.2);
+  }
+  
+  .terminal-toggle-box:hover {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 0, 0.2) 100%);
+    box-shadow: 
+      inset 0 1px 2px rgba(255, 255, 0, 0.3),
+      0 0 15px rgba(255, 255, 0, 0.2);
+  }
 }

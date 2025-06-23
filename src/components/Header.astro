@@ -12,8 +12,42 @@ const navigation = [
 <header class="terminal-header">
   <div class="container mx-auto px-4">
     <div class="py-3">
+      <!-- Terminal header with roll-up controls -->
+      <div class="flex items-center justify-between mb-2">
+        <!-- Terminal window controls -->
+        <div class="flex items-center space-x-4">
+          <!-- Mac-style traffic lights -->
+          <div class="flex items-center space-x-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div>
+          
+          <!-- Terminal toggle control -->
+          <div class="terminal-toggle-box flex items-center border border-terminal-yellow border-opacity-30 rounded px-3 py-1 hover:border-opacity-60 transition-all duration-200">
+            <button 
+              id="terminal-toggle"
+              class="flex items-center space-x-2 text-terminal-yellow hover:text-terminal-white transition-colors duration-200 text-sm font-bold"
+              title="Minimize/maximize terminal window"
+              aria-label="Toggle terminal window"
+            >
+              <span id="toggle-icon">▼</span>
+              <span class="hidden sm:inline">Terminal Toggle</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Terminal title -->
+        <div class="text-terminal-green text-xs font-mono opacity-70">
+          Positronikal Terminal v1.0.0
+        </div>
+        
+        <!-- Spacer for balance -->
+        <div class="w-16"></div>
+      </div>
+      
       <!-- Terminal prompt navigation -->
-      <div class="text-terminal-green font-cyber text-sm md:text-base">
+      <div id="terminal-content" class="text-terminal-green font-cyber text-sm md:text-base transition-all duration-300 ease-in-out">
         <div class="flex flex-wrap items-center">
           <!-- User info and navigation -->
           <span class="mr-1 text-terminal-matrix-green">┌─[</span>
@@ -45,9 +79,8 @@ const navigation = [
           <!-- Parent directory indicator -->
           <span class="text-terminal-gray ml-2">[..]</span>
         </div>
-      </div>
-      
-      <!-- Command line input -->
+        
+        <!-- Command line input -->
       <div class="text-terminal-green font-cyber text-sm md:text-base mt-2">
         <div class="flex items-center">
           <span class="text-terminal-matrix-green">└─</span>
@@ -80,6 +113,7 @@ const navigation = [
           <span>UTC</span>
         </div>
       </div>
+      </div>
     </div>
   </div>
   
@@ -104,18 +138,73 @@ const navigation = [
   updateTime();
   setInterval(updateTime, 1000);
   
-  // Show/hide terminal output based on activity
+  // Get terminal elements
   const terminalOutput = document.getElementById('terminal-output');
   const terminalInput = document.getElementById('terminal-input');
+  const terminalToggle = document.getElementById('terminal-toggle');
+  const terminalContent = document.getElementById('terminal-content');
+  const toggleIcon = document.getElementById('toggle-icon');
+  let isRolledUp = false;
   
-  if (terminalInput && terminalOutput) {
-    // Show terminal output when user starts typing or when there's content
-    terminalInput.addEventListener('focus', () => {
-      if (terminalOutput.children.length > 0) {
-        terminalOutput.classList.remove('hidden');
+  // Check if elements exist
+  if (!terminalToggle || !terminalContent || !toggleIcon) {
+    console.warn('Terminal elements not found - roll-up feature disabled');
+  } else {
+    // Terminal roll-up functionality
+    function toggleTerminal() {
+      isRolledUp = !isRolledUp;
+      
+      if (isRolledUp) {
+        // Roll up the terminal
+        terminalContent.style.maxHeight = '0';
+        terminalContent.style.opacity = '0';
+        terminalContent.style.overflow = 'hidden';
+        toggleIcon.textContent = '▶';
+        
+        // Also hide terminal output when rolled up
+        if (terminalOutput) {
+          terminalOutput.classList.add('hidden');
+        }
+      } else {
+        // Roll down the terminal
+        terminalContent.style.maxHeight = '';
+        terminalContent.style.opacity = '1';
+        terminalContent.style.overflow = 'visible';
+        toggleIcon.textContent = '▼';
+      }
+    }
+    
+    // Toggle button click handler
+    terminalToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleTerminal();
+    });
+    
+    // Click in terminal area to roll down (when rolled up)
+    terminalContent.addEventListener('click', (e) => {
+      if (isRolledUp) {
+        e.stopPropagation();
+        toggleTerminal();
       }
     });
     
+    // Terminal input focus handling
+    if (terminalInput) {
+      terminalInput.addEventListener('focus', () => {
+        // First, make sure terminal is rolled down
+        if (isRolledUp) {
+          toggleTerminal();
+        }
+        
+        if (terminalOutput && terminalOutput.children.length > 0) {
+          terminalOutput.classList.remove('hidden');
+        }
+      });
+    }
+  }
+  
+  // Show/hide terminal output based on activity
+  if (terminalInput && terminalOutput) {
     // Observe changes to terminal output to show/hide appropriately
     const observer = new MutationObserver(() => {
       if (terminalOutput.children.length > 0) {
@@ -136,6 +225,12 @@ const navigation = [
       // Focus terminal input with Ctrl+`
       if (e.key === '`' && e.ctrlKey) {
         e.preventDefault();
+        
+        // Make sure terminal is rolled down first
+        if (isRolledUp && terminalToggle) {
+          toggleTerminal();
+        }
+        
         terminalInput.focus();
         if (terminalOutput.children.length > 0) {
           terminalOutput.classList.remove('hidden');
