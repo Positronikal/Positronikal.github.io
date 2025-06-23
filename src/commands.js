@@ -85,9 +85,13 @@ const commandRegistry = {
     description: 'Information about CarnivoreLE project',
     execute: async () => generateCarnivoreOutput(),
   },
-  backup: {
-    description: 'Information about simpleBackup project',
-    execute: async () => generateBackupOutput(),
+  davinci: {
+    description: 'Information about DaVinci MCP Professional project',
+    execute: async () => generateDaVinciOutput(),
+  },
+  doxygen: {
+    description: 'Information about Doxygen MCP project',
+    execute: async () => generateDoxygenOutput(),
   },
   macports: {
     description: 'Information about macportsAssistant project',
@@ -227,7 +231,7 @@ function generateHelpOutput() {
   const categories = {
     'System': ['help', 'about', 'whoami', 'clear', 'uname', 'neofetch', 'uptime'],
     'Navigation': ['ls', 'cd', 'pwd', 'cat'],
-    'Projects': ['projects', 'ewftools', 'carnivore', 'backup', 'macports'],
+    'Projects': ['projects', 'ewftools', 'carnivore', 'davinci', 'doxygen', 'macports'],
     'Security': ['gpg', 'dco', 'security'],
     'Utilities': ['history', 'echo', 'date', 'github', 'contact', 'man', 'credits'],
     'Extras': ['matrix', 'hack']
@@ -361,17 +365,24 @@ function generateProjectsOutput() {
       </div>
       
       <div class="project-card">
+        <h3 class="project-title text-terminal-white font-bold">DaVinci MCP Professional</h3>
+        <span class="project-status status-active">Active</span>
+        <p class="text-terminal-gray mt-2">Enterprise-grade MCP server exposing full DaVinci Resolve functionality to Claude for Windows and Cursor MCP clients.</p>
+        <a href="https://github.com/Positronikal/davinci-mcp-professional" class="project-link">→ View Project</a>
+      </div>
+      
+      <div class="project-card">
+        <h3 class="project-title text-terminal-white font-bold">Doxygen MCP</h3>
+        <span class="project-status status-active">Active</span>
+        <p class="text-terminal-gray mt-2">MCP server exposing full Doxygen functionality to automate documentation generation from source code comments.</p>
+        <a href="https://github.com/Positronikal/doxygen-mcp" class="project-link">→ View Project</a>
+      </div>
+      
+      <div class="project-card">
         <h3 class="project-title text-terminal-white font-bold">CarnivoreLE</h3>
         <span class="project-status status-deprecated">Deprecated</span>
         <p class="text-terminal-gray mt-2">Legacy network packet capture and analysis tool (archived as of Dec 31, 2020).</p>
         <a href="https://github.com/Positronikal/CarnivoreLE" class="project-link">→ View Archive</a>
-      </div>
-      
-      <div class="project-card">
-        <h3 class="project-title text-terminal-white font-bold">simpleBackup</h3>
-        <span class="project-status status-active">Active</span>
-        <p class="text-terminal-gray mt-2">Bash-based backup utility for Debian systems using rsync and dialog.</p>
-        <a href="https://github.com/Positronikal/simpleBackup" class="project-link">→ View Project</a>
       </div>
       
       <div class="project-card">
@@ -383,7 +394,7 @@ function generateProjectsOutput() {
     </div>
     
     <div class="mt-6 text-terminal-cyan">
-      <p>Use commands like 'ewftools', 'carnivore', 'backup', or 'macports' for detailed project information.</p>
+      <p>Use commands like 'ewftools', 'davinci', 'doxygen', 'carnivore', or 'macports' for detailed project information.</p>
     </div>
   `;
 }
@@ -436,7 +447,98 @@ function generateEWFToolsOutput() {
   `;
 }
 function generateCarnivoreOutput() { return `<p class="text-terminal-yellow">Carnivore LE information would go here...</p>`; }
-function generateBackupOutput() { return `<p class="text-terminal-yellow">simpleBackup information would go here...</p>`; }
+
+function generateDaVinciOutput() {
+  return `
+    <div class="cyber-card">
+      <h2 class="text-terminal-yellow text-xl mb-4">DaVinci MCP Professional</h2>
+      
+      <div class="mb-4">
+        <span class="project-status status-active">Active Development</span>
+        <span class="license-badge ml-2">GPLv3</span>
+      </div>
+      
+      <p class="text-terminal-white mb-4">
+        Enterprise-grade Model Context Protocol (MCP) server that exposes the full functionality 
+        of DaVinci Resolve and DaVinci Resolve Studio through version 20 to AI clients.
+      </p>
+      
+      <div class="forensics-log">
+        <h3 class="text-terminal-forensics-blue font-bold mb-2">Technical Details:</h3>
+        <ul class="list-disc list-inside space-y-1 text-terminal-gray">
+          <li>Compatible with Claude for Windows MCP client</li>
+          <li>Compatible with Cursor MCP clients</li>
+          <li>Supports DaVinci Resolve through version 20</li>
+          <li>Enterprise-grade automation capabilities</li>
+          <li>Full video editing workflow automation</li>
+        </ul>
+      </div>
+      
+      <div class="mt-4">
+        <h3 class="text-terminal-matrix-green font-bold mb-2">Key Features:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+          <span class="text-terminal-cyan">• Project automation</span>
+          <span class="text-terminal-cyan">• Timeline management</span>
+          <span class="text-terminal-cyan">• Color grading control</span>
+          <span class="text-terminal-cyan">• Export automation</span>
+          <span class="text-terminal-cyan">• Media management</span>
+          <span class="text-terminal-cyan">• Effects control</span>
+        </div>
+      </div>
+      
+      <div class="mt-4 text-terminal-yellow">
+        <p><strong>Repository:</strong> <a href="https://github.com/Positronikal/davinci-mcp-professional" class="project-link">github.com/Positronikal/davinci-mcp-professional</a></p>
+      </div>
+    </div>
+  `;
+}
+
+function generateDoxygenOutput() {
+  return `
+    <div class="cyber-card">
+      <h2 class="text-terminal-yellow text-xl mb-4">Doxygen MCP Server</h2>
+      
+      <div class="mb-4">
+        <span class="project-status status-active">Active Development</span>
+        <span class="license-badge ml-2">GPLv3</span>
+      </div>
+      
+      <p class="text-terminal-white mb-4">
+        Model Context Protocol (MCP) server that exposes the full functionality of Doxygen 
+        to Claude for Windows MCP client, enabling automated documentation generation from 
+        source code comments.
+      </p>
+      
+      <div class="forensics-log">
+        <h3 class="text-terminal-forensics-blue font-bold mb-2">Technical Details:</h3>
+        <ul class="list-disc list-inside space-y-1 text-terminal-gray">
+          <li>Automated source code documentation</li>
+          <li>Parses classes, functions, and variables</li>
+          <li>Multiple output formats: HTML, PDF, LaTeX</li>
+          <li>Integration with Claude for Windows</li>
+          <li>Streamlined documentation workflows</li>
+        </ul>
+      </div>
+      
+      <div class="mt-4">
+        <h3 class="text-terminal-matrix-green font-bold mb-2">Output Formats:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+          <span class="text-terminal-cyan">• HTML documentation</span>
+          <span class="text-terminal-cyan">• PDF generation</span>
+          <span class="text-terminal-cyan">• LaTeX output</span>
+          <span class="text-terminal-cyan">• XML documentation</span>
+          <span class="text-terminal-cyan">• RTF format</span>
+          <span class="text-terminal-cyan">• Man pages</span>
+        </div>
+      </div>
+      
+      <div class="mt-4 text-terminal-yellow">
+        <p><strong>Repository:</strong> <a href="https://github.com/Positronikal/doxygen-mcp" class="project-link">github.com/Positronikal/doxygen-mcp</a></p>
+      </div>
+    </div>
+  `;
+}
+
 function generateMacPortsOutput() { return `<p class="text-terminal-yellow">macportsAssistant information would go here...</p>`; }
 function generateGPGOutput() { return `<p class="text-terminal-yellow">GPG information would go here...</p>`; }
 function generateDCOOutput() { return `<p class="text-terminal-yellow">DCO information would go here...</p>`; }
