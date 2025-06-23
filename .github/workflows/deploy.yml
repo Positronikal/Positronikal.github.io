@@ -30,7 +30,7 @@ jobs:
           # yamllint disable-line rule:line-length
           # node-version: 20  # Node version (default = 20, optional)
           # yamllint disable-line rule:line-length
-          package-manager: pnpm@latest  # Node pkgmgr (uses lockfile, optional)
+          package-manager: pnpm  # Node pkgmgr (uses lockfile, optional)
 
   deploy:
     needs: build
