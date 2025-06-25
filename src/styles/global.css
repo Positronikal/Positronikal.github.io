@@ -227,6 +227,41 @@
     @apply bg-terminal-black border border-terminal-green border-opacity-40 rounded-lg overflow-hidden shadow-terminal;
   }
 
+  /* Responsive container scaling optimized for 1920x1080 */
+  .main-container {
+    @apply mx-auto px-4;
+    /* Small screens: standard responsive behavior */
+    max-width: 100%;
+  }
+  
+  /* Medium screens (tablets): similar to current 1024x768 optimization */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .main-container {
+      max-width: 95%;
+    }
+  }
+  
+  /* Large screens (1280px+): scale up for 1920x1080 while maintaining frame */
+  @media (min-width: 1280px) {
+    .main-container {
+      max-width: 85%;
+    }
+  }
+  
+  /* Extra large screens (1536px+): optimal for 1920x1080 and larger */
+  @media (min-width: 1536px) {
+    .main-container {
+      max-width: 80%;
+    }
+  }
+  
+  /* Very large screens (1920px+): maintain proportional framing */
+  @media (min-width: 1920px) {
+    .main-container {
+      max-width: 75%;
+    }
+  }
+
   .cli-header {
     @apply flex items-center justify-between p-3 bg-gradient-to-r from-terminal-black to-gray-900 border-b border-terminal-green border-opacity-30;
   }
@@ -240,7 +275,60 @@
   }
 
   .cli-body {
-    @apply p-4 min-h-[300px] max-h-[600px] overflow-y-auto;
+    @apply p-4 overflow-y-auto;
+    /* Base height for smaller screens */
+    min-height: 300px;
+    height: 500px;
+  }
+  
+  /* Responsive terminal height - larger on bigger screens */
+  @media (min-width: 768px) {
+    .cli-body {
+      height: 600px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .cli-body {
+      height: 700px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .cli-body {
+      height: 768px;
+    }
+  }
+
+  /* Terminal output area - responsive height for dropdown */
+  .terminal-output-area {
+    /* Base height for smaller screens */
+    max-height: 400px;
+  }
+  
+  /* Responsive terminal output height - larger on bigger screens */
+  @media (min-width: 768px) {
+    .terminal-output-area {
+      max-height: 500px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .terminal-output-area {
+      max-height: 600px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .terminal-output-area {
+      max-height: 768px;
+    }
+  }
+  
+  @media (min-width: 1920px) {
+    .terminal-output-area {
+      max-height: 800px;
+    }
   }
 
   /* Scrollbar styling for webkit browsers */
