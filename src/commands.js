@@ -78,7 +78,7 @@ const commandRegistry = {
     execute: async () => generateProjectsOutput(),
   },
   ewftools: {
-    description: 'Information about libewf-legacy-win project',
+    description: 'Information about EWF Tools for Windows x64 project',
     execute: async () => generateEWFToolsOutput(),
   },
   carnivore: {
@@ -358,10 +358,10 @@ function generateProjectsOutput() {
     
     <div class="space-y-4">
       <div class="project-card">
-        <h3 class="project-title text-terminal-white font-bold">libewf-legacy-win</h3>
+        <h3 class="project-title text-terminal-white font-bold">EWF Tools for Windows x64</h3>
         <span class="project-status status-active">Active</span>
         <p class="text-terminal-gray mt-2">Expert Witness Format tools for Windows AMD64. Complete build environment with Visual Studio 2022 support.</p>
-        <a href="https://github.com/Positronikal/libewf-legacy-win" class="project-link">→ View Project</a>
+        <a href="https://github.com/Positronikal/ewf-tools-win64" class="project-link">→ View Project</a>
       </div>
       
       <div class="project-card">
@@ -403,7 +403,7 @@ function generateProjectsOutput() {
 function generateEWFToolsOutput() {
   return `
     <div class="cyber-card">
-      <h2 class="text-terminal-yellow text-xl mb-4">libewf-legacy-win Project</h2>
+      <h2 class="text-terminal-yellow text-xl mb-4">EWF Tools for Windows x64 Project</h2>
       
       <div class="mb-4">
         <span class="project-status status-active">Active Development</span>
@@ -441,7 +441,7 @@ function generateEWFToolsOutput() {
       </div>
       
       <div class="mt-4 text-terminal-yellow">
-        <p><strong>Repository:</strong> <a href="https://github.com/Positronikal/libewf-legacy-win" class="project-link">github.com/Positronikal/libewf-legacy-win</a></p>
+        <p><strong>Repository:</strong> <a href="https://github.com/Positronikal/ewf-tools-win64" class="project-link">github.com/Positronikal/ewf-tools-win64</a></p>
       </div>
     </div>
   `;
