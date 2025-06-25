@@ -5,7 +5,7 @@ description: Digital forensics specialist and cybersecurity researcher
 
 # Hoyt Harness (Positronikal)
 
-I am **Hoyt Harness**, and **Positronikal** is the professional moniker I've used for several years for my digital forensics and cybersecurity projects. With over 20 years of experience in the field, I've transitioned from government cyber investigation to digital forensics research and curriculum development.
+I am **Hoyt Harness**, and **Positronikal** is the professional moniker I've used for several years for my digital forensics and cybersecurity projects. With over 24 years of experience in the field, I've transitioned from government cyber investigation to digital forensics research and curriculum development.
 
 ## Professional Background
 
