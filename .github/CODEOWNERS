@@ -1,0 +1,19 @@
+# Global code ownership
+# All files are owned by the repository maintainer
+* @Positronikal
+
+# Specific ownership patterns
+/.github/ @Positronikal
+/src/ @Positronikal
+/public/ @Positronikal
+
+# Configuration files require maintainer review
+*.yml @Positronikal
+*.yaml @Positronikal
+*.json @Positronikal
+*.toml @Positronikal
+*.config.* @Positronikal
+
+# Security-sensitive files
+/.github/SECURITY.md @Positronikal
+/.github/workflows/ @Positronikal

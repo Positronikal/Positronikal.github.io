@@ -1,0 +1,188 @@
+name: CI - Security & Quality Checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    # Run security checks weekly on Mondays at 9 AM CT
+    - cron: '0 14 * * 1'
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  security-audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          
+      - name: Install pnpm
+        run: npm install -g pnpm
+        
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Run npm audit
+        run: pnpm audit --audit-level=high
+        continue-on-error: true
+        
+      - name: License compliance check
+        run: |
+          pnpm install -g license-checker
+          license-checker --json --out licenses.json
+          
+      - name: Check for security vulnerabilities in dependencies
+        run: |
+          # Check for high/critical vulnerabilities
+          if pnpm audit --audit-level=high --json | jq '.advisories | length' | grep -v '^0$'; then
+            echo "High or critical vulnerabilities found!"
+            pnpm audit --audit-level=high
+            exit 1
+          fi
+        continue-on-error: false
+
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          
+      - name: Install pnpm
+        run: npm install -g pnpm
+        
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Type checking
+        run: pnpm check
+        
+      - name: Lint code
+        run: pnpm lint
+        continue-on-error: true
+        
+      - name: Build site
+        run: pnpm build
+        
+      - name: Check build artifacts
+        run: |
+          # Verify build completed successfully
+          if [ ! -d "dist" ]; then
+            echo "Build failed - dist directory not found"
+            exit 1
+          fi
+          
+          # Check for common security issues in build output
+          echo "Checking for potential security issues in build..."
+          
+          # Check for exposed secrets (basic patterns)
+          if grep -r -i "password\|secret\|key\|token" dist/ --include="*.html" --include="*.js" --include="*.css"; then
+            echo "Warning: Potential secrets found in build output"
+          fi
+
+  security-headers:
+    name: Security Headers Check
+    runs-on: ubuntu-latest
+    needs: code-quality
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          
+      - name: Install pnpm
+        run: npm install -g pnpm
+        
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Build site
+        run: pnpm build
+        
+      - name: Check security headers in HTML
+        run: |
+          echo "Checking for security headers in generated HTML..."
+          
+          # Check for CSP headers
+          if ! grep -r "Content-Security-Policy" dist/; then
+            echo "Warning: No Content-Security-Policy found"
+          fi
+          
+          # Check for X-Frame-Options
+          if ! grep -r "X-Frame-Options" dist/; then
+            echo "Warning: No X-Frame-Options found"
+          fi
+          
+          # Check for X-Content-Type-Options
+          if ! grep -r "X-Content-Type-Options" dist/; then
+            echo "Warning: No X-Content-Type-Options found"
+          fi
+
+  gpg-signature-check:
+    name: GPG Signature Verification
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Verify GPG signatures
+        run: |
+          echo "Checking GPG signatures on commits..."
+          
+          # Get the list of commits in this PR
+          COMMITS=$(git log --pretty=format:"%H" origin/main..HEAD)
+          
+          if [ -z "$COMMITS" ]; then
+            echo "No commits found in PR"
+            exit 0
+          fi
+          
+          UNSIGNED_COMMITS=""
+          
+          for commit in $COMMITS; do
+            if ! git verify-commit $commit 2>/dev/null; then
+              UNSIGNED_COMMITS="$UNSIGNED_COMMITS $commit"
+            fi
+          done
+          
+          if [ -n "$UNSIGNED_COMMITS" ]; then
+            echo "❌ The following commits are not GPG signed:"
+            for commit in $UNSIGNED_COMMITS; do
+              echo "  - $commit ($(git log --format="%s" -n 1 $commit))"
+            done
+            echo ""
+            echo "All commits must be GPG signed according to Positronikal Coding Standards."
+            echo "Please sign your commits and force-push to update this PR."
+            exit 1
+          else
+            echo "✅ All commits in this PR are properly GPG signed."
+          fi

@@ -20,15 +20,18 @@ import Layout from '@layouts/Layout.astro';
       <!-- Welcome Message -->
       <div class="terminal-welcome animate-fade-in">
         <div class="ascii-art text-terminal-matrix-green mb-6">
-██████╗  ██████╗ ███████╗██╗████████╗██████╗  ██████╗ ███╗   ██╗██╗██╗  ██╗ █████╗ ██╗     
-██╔══██╗██╔═══██╗██╔════╝██║╚══██╔══╝██╔══██╗██╔═══██╗████╗  ██║██║██║ ██╔╝██╔══██╗██║     
-██████╔╝██║   ██║███████╗██║   ██║   ██████╔╝██║   ██║██╔██╗ ██║██║█████╔╝ ███████║██║     
-██╔═══╝ ██║   ██║╚════██║██║   ██║   ██╔══██╗██║   ██║██║╚██╗██║██║██╔═██╗ ██╔══██║██║     
-██║     ╚██████╔╝███████║██║   ██║   ██║  ██║╚██████╔╝██║ ╚████║██║██║  ██╗██║  ██║███████╗
-╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+          ██████╗ ██████╗ ███████╗██╗████████╗██████╗ ██████╗ ███╗ ██╗██╗██╗ ██╗ █████╗ ██╗
+          ██╔══██╗██╔═══██╗██╔════╝██║╚══██╔══╝██╔══██╗██╔═══██╗████╗ ██║██║██║ ██╔╝██╔══██╗██║
+          ██████╔╝██║ ██║███████╗██║ ██║ ██████╔╝██║ ██║██╔██╗ ██║██║█████╔╝ ███████║██║ ██╔═══╝ ██║
+          ██║╚════██║██║ ██║ ██╔══██╗██║ ██║██║╚██╗██║██║██╔═██╗ ██╔══██║██║ ██║
+          ╚██████╔╝███████║██║ ██║ ██║ ██║╚██████╔╝██║ ╚████║██║██║ ██╗██║ ██║███████╗ ╚═╝ ╚═════╝
+          ╚══════╝╚═╝ ╚═╝ ╚═╝ ╚═╝ ╚═════╝ ╚═╝ ╚═══╝╚═╝╚═╝ ╚═╝╚═╝ ╚═╝╚══════╝
         </div>
 
-        <h1 class="text-terminal-yellow text-3xl md:text-4xl font-bold mb-6 glitch" data-text="Welcome to Positronikal">
+        <h1
+          class="text-terminal-yellow text-3xl md:text-4xl font-bold mb-6 glitch"
+          data-text="Welcome to Positronikal"
+        >
           Welcome to Positronikal
         </h1>
 
@@ -36,19 +39,27 @@ import Layout from '@layouts/Layout.astro';
           <!-- Introduction -->
           <div class="cyber-card">
             <p class="text-terminal-white text-lg leading-relaxed">
-              Welcome to <span class="text-terminal-yellow font-bold">Positronikal</span> on GitHub! 
-            </p>
-            
-            <p class="text-terminal-gray mt-4">
-              The majority of projects hosted here pertain to <span class="text-terminal-matrix-green">digital forensics</span> 
-              and <span class="text-terminal-matrix-green">cyber investigation</span>. That said, there will likely 
-              also be projects that don't directly pertain to these subject matter areas.
+              Welcome to <span class="text-terminal-yellow font-bold">Positronikal</span> on GitHub!
             </p>
 
-            <div class="mt-4 p-3 bg-terminal-info-cyan bg-opacity-20 border border-terminal-info-cyan border-opacity-30 rounded">
+            <p class="text-terminal-gray mt-4">
+              The majority of projects hosted here pertain to <span
+                class="text-terminal-matrix-green">digital forensics</span
+              >
+              and <span class="text-terminal-matrix-green">cyber investigation</span>. That said,
+              there will likely also be projects that don't directly pertain to these subject matter
+              areas.
+            </p>
+
+            <div
+              class="mt-4 p-3 bg-terminal-info-cyan bg-opacity-20 border border-terminal-info-cyan border-opacity-30 rounded"
+            >
               <p class="text-terminal-info-cyan text-sm">
-                <strong>Note:</strong> Contributing forks of other projects are located here: 
-                <a href="https://github.com/hoyt-harness" class="text-terminal-yellow hover:text-terminal-white">
+                <strong>Note:</strong> Contributing forks of other projects are located here:
+                <a
+                  href="https://github.com/hoyt-harness"
+                  class="text-terminal-yellow hover:text-terminal-white"
+                >
                   github.com/hoyt-harness
                 </a>
               </p>
@@ -70,12 +81,14 @@ import Layout from '@layouts/Layout.astro';
                   <span class="project-status status-active">Active</span>
                 </div>
                 <p class="text-terminal-gray text-sm mb-3">
-                  Expert Witness Format tools for Windows AMD64. Executables and dynamically
-                   linked libraries only.
+                  Expert Witness Format tools for Windows AMD64. Executables and dynamically linked
+                  libraries only.
                 </p>
                 <div class="space-y-2">
-                  <a href="https://github.com/Positronikal/ewf-tools-win64" 
-                     class="project-link block">
+                  <a
+                    href="https://github.com/Positronikal/ewf-tools-win64"
+                    class="project-link block"
+                  >
                     → View Repository
                   </a>
                   <p class="text-xs text-terminal-cyan">
@@ -91,12 +104,14 @@ import Layout from '@layouts/Layout.astro';
                   <span class="project-status status-active">Active</span>
                 </div>
                 <p class="text-terminal-gray text-sm mb-3">
-                  Enterprise-grade MCP server exposing full DaVinci Resolve functionality 
-                  to Claude for Windows and Cursor MCP clients for automated video editing.
+                  Enterprise-grade MCP server exposing full DaVinci Resolve functionality to Claude
+                  for Windows and Cursor MCP clients for automated video editing.
                 </p>
                 <div class="space-y-2">
-                  <a href="https://github.com/Positronikal/davinci-mcp-professional" 
-                     class="project-link block">
+                  <a
+                    href="https://github.com/Positronikal/davinci-mcp-professional"
+                    class="project-link block"
+                  >
                     → View Repository
                   </a>
                   <p class="text-xs text-terminal-cyan">
@@ -112,12 +127,11 @@ import Layout from '@layouts/Layout.astro';
                   <span class="project-status status-active">Active</span>
                 </div>
                 <p class="text-terminal-gray text-sm mb-3">
-                  MCP server exposing full Doxygen functionality to automate documentation 
+                  MCP server exposing full Doxygen functionality to automate documentation
                   generation from source code comments with HTML, PDF output support.
                 </p>
                 <div class="space-y-2">
-                  <a href="https://github.com/Positronikal/doxygen-mcp" 
-                     class="project-link block">
+                  <a href="https://github.com/Positronikal/doxygen-mcp" class="project-link block">
                     → View Repository
                   </a>
                   <p class="text-xs text-terminal-cyan">
@@ -133,12 +147,14 @@ import Layout from '@layouts/Layout.astro';
                   <span class="project-status status-maintenance">Maintenance</span>
                 </div>
                 <p class="text-terminal-gray text-sm mb-3">
-                  macOS version-agnostic MacPorts installation and upgrade automation. 
-                  Evolved from montereyMacports.
+                  macOS version-agnostic MacPorts installation and upgrade automation. Evolved from
+                  montereyMacports.
                 </p>
                 <div class="space-y-2">
-                  <a href="https://github.com/Positronikal/macportsAssistant" 
-                     class="project-link block">
+                  <a
+                    href="https://github.com/Positronikal/macportsAssistant"
+                    class="project-link block"
+                  >
                     → View Repository
                   </a>
                   <p class="text-xs text-terminal-cyan">
@@ -154,12 +170,11 @@ import Layout from '@layouts/Layout.astro';
                   <span class="project-status status-deprecated">Deprecated</span>
                 </div>
                 <p class="text-terminal-gray text-sm mb-3">
-                  Historical forensic preview and triage tool. Deprecated as of December 31, 2020. 
+                  Historical forensic preview and triage tool. Deprecated as of December 31, 2020.
                   Maintained for reference only.
                 </p>
                 <div class="space-y-2">
-                  <a href="https://github.com/Positronikal/CarnivoreLE" 
-                     class="project-link block">
+                  <a href="https://github.com/Positronikal/CarnivoreLE" class="project-link block">
                     → View Archive
                   </a>
                   <p class="text-xs text-terminal-error-red">
@@ -169,11 +184,17 @@ import Layout from '@layouts/Layout.astro';
               </div>
             </div>
 
-            <div class="mt-6 p-4 bg-terminal-forensics-blue bg-opacity-20 border border-terminal-forensics-blue border-opacity-30 rounded">
+            <div
+              class="mt-6 p-4 bg-terminal-forensics-blue bg-opacity-20 border border-terminal-forensics-blue border-opacity-30 rounded"
+            >
               <p class="text-terminal-cyan text-sm">
-                💡 <strong>Pro tip:</strong> Type <code class="text-terminal-yellow">projects</code> in the terminal above 
-                for detailed project information, or use commands like <code class="text-terminal-yellow">ewftools</code>, 
-                <code class="text-terminal-yellow">davinci</code>, <code class="text-terminal-yellow">doxygen</code>, etc.
+                💡 <strong>Pro tip:</strong> Type <code class="text-terminal-yellow">projects</code>
+                in the terminal above for detailed project information, or use commands like <code
+                  class="text-terminal-yellow">ewftools</code
+                >,
+                <code class="text-terminal-yellow">davinci</code>, <code
+                  class="text-terminal-yellow">doxygen</code
+                >, etc.
               </p>
             </div>
           </div>
@@ -186,12 +207,59 @@ import Layout from '@layouts/Layout.astro';
             </h2>
 
             <div class="space-y-4">
+              <!-- Coding Standards Requirement -->
+              <div
+                class="standards-requirement bg-terminal-warning-amber bg-opacity-20 border border-terminal-warning-amber border-opacity-30 rounded p-4"
+              >
+                <h3 class="text-terminal-warning-amber font-bold mb-3 flex items-center">
+                  <span class="mr-2">📋</span>
+                  MANDATORY: Positronikal Coding Standards Compliance
+                </h3>
+                <p class="text-terminal-white text-sm mb-3">
+                  <strong>All contributors must read and adhere to the </strong>
+                  <a
+                    href="https://github.com/Positronikal/PositronikalCodingStandards"
+                    class="text-terminal-yellow hover:text-terminal-white font-bold underline"
+                  >
+                    Positronikal Coding Standards
+                  </a>
+                  <strong> before submitting any contributions.</strong>
+                </p>
+                <div
+                  class="bg-terminal-error-red bg-opacity-20 border border-terminal-error-red border-opacity-30 rounded p-3 mt-3"
+                >
+                  <p class="text-terminal-error-red text-sm font-bold">
+                    ⚠️ Non-compliance with these standards is grounds for:
+                  </p>
+                  <ul class="list-disc list-inside mt-2 space-y-1 text-terminal-white text-sm">
+                    <li>Pull request rejection</li>
+                    <li>Revocation of organization membership</li>
+                    <li>Contributor access restrictions</li>
+                  </ul>
+                </div>
+                <div
+                  class="mt-3 p-3 bg-terminal-info-cyan bg-opacity-20 border border-terminal-info-cyan border-opacity-30 rounded"
+                >
+                  <p class="text-terminal-info-cyan text-sm">
+                    💡 <strong>The standards include:</strong> Code formatting rules based on Unix Philosophy,
+                    repository security requirements, and specialized forensic tool compliance guidance.
+                  </p>
+                </div>
+              </div>
+
               <div class="security-alert">
                 <h3 class="text-terminal-error-red font-bold mb-2">🔐 Security Requirements</h3>
                 <ul class="list-disc list-inside space-y-1 text-terminal-white text-sm">
-                  <li><strong>GPG signatures required:</strong> All commits in pull requests must be GPG signed</li>
-                  <li><strong>DCO compliance:</strong> Developer Certificate of Origin must be on file</li>
-                  <li><strong>Key verification:</strong> Use of a keyserver is highly recommended</li>
+                  <li>
+                    <strong>GPG signatures required:</strong> All commits in pull requests must be GPG
+                    signed
+                  </li>
+                  <li>
+                    <strong>DCO compliance:</strong> Developer Certificate of Origin must be on file
+                  </li>
+                  <li>
+                    <strong>Key verification:</strong> Use of a keyserver is highly recommended
+                  </li>
                 </ul>
               </div>
 
@@ -199,38 +267,65 @@ import Layout from '@layouts/Layout.astro';
                 <div>
                   <h3 class="text-terminal-matrix-green font-bold mb-2">Getting Started:</h3>
                   <ul class="list-disc list-inside space-y-1 text-terminal-gray text-sm">
-                    <li><a href="https://help.github.com/" class="text-terminal-yellow">GitHub Help</a> pages</li>
-                    <li><a href="https://help.github.com/categories/bootcamp/" class="text-terminal-yellow">Bootcamp</a> quick start</li>
-                    <li><a href="https://help.github.com/categories/setup" class="text-terminal-yellow">Setup</a> information</li>
+                    <li>
+                      <a href="https://help.github.com/" class="text-terminal-yellow">GitHub Help</a
+                      > pages
+                    </li>
+                    <li>
+                      <a
+                        href="https://help.github.com/categories/bootcamp/"
+                        class="text-terminal-yellow">Bootcamp</a
+                      > quick start
+                    </li>
+                    <li>
+                      <a
+                        href="https://help.github.com/categories/setup"
+                        class="text-terminal-yellow">Setup</a
+                      > information
+                    </li>
                   </ul>
                 </div>
 
                 <div>
                   <h3 class="text-terminal-matrix-green font-bold mb-2">Standards:</h3>
                   <ul class="list-disc list-inside space-y-1 text-terminal-gray text-sm">
-                    <li><a href="https://www.gnu.org/prep/standards/" class="text-terminal-yellow">GNU Coding Standards</a></li>
-                    <li><a href="http://catb.org/esr/writings/taoup/html/" class="text-terminal-yellow">UNIX Philosophy</a></li>
+                    <li>
+                      <a href="https://www.gnu.org/prep/standards/" class="text-terminal-yellow"
+                        >GNU Coding Standards</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://catb.org/esr/writings/taoup/html/"
+                        class="text-terminal-yellow">UNIX Philosophy</a
+                      >
+                    </li>
                     <li>Clean, documented code</li>
                     <li>Security-first approach</li>
                   </ul>
                 </div>
               </div>
-              
+
               <div class="dco-requirement">
                 <h3 class="text-terminal-warning-amber font-bold mb-2 flex items-center">
                   <span class="mr-2">📋</span>
                   Developer Certificate of Origin (DCO)
                 </h3>
                 <p class="text-terminal-white text-sm mb-3">
-                  All contributors must sign and submit the Developer Certificate of Origin (DCO) before 
-                  their contributions can be accepted. The DCO is a legally binding statement that you 
-                  have the right to submit your contribution and agree to the project's licensing terms.
+                  All contributors must sign and submit the Developer Certificate of Origin (DCO)
+                  before their contributions can be accepted. The DCO is a legally binding statement
+                  that you have the right to submit your contribution and agree to the project's
+                  licensing terms.
                 </p>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
-                  <a href="/Posi_DCO.txt" 
-                     class="inline-flex items-center text-terminal-yellow hover:text-terminal-white font-bold transition-colors duration-200"
-                     target="_blank"
-                     rel="noopener noreferrer">
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0"
+                >
+                  <a
+                    href="/Posi_DCO.txt"
+                    class="inline-flex items-center text-terminal-yellow hover:text-terminal-white font-bold transition-colors duration-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span class="mr-2">📄</span>
                     Download DCO Template
                   </a>
@@ -243,9 +338,10 @@ import Layout from '@layouts/Layout.astro';
               <div class="gpg-signature">
                 <h3 class="text-terminal-forensics-blue font-bold mb-2">🔑 GPG Public Key</h3>
                 <p class="text-terminal-gray text-sm">
-                  My public key (Hoyt Harness) can be retrieved from MIT's keyserver at 
-                  <a href="https://pgp.mit.edu/" class="text-terminal-yellow">pgp.mit.edu</a>. 
-                  Use <code class="text-terminal-cyan">gpg</code> command in the terminal for detailed information.
+                  My public key (Hoyt Harness) can be retrieved from MIT's keyserver at
+                  <a href="https://pgp.mit.edu/" class="text-terminal-yellow">pgp.mit.edu</a>. Use <code
+                    class="text-terminal-cyan">gpg</code
+                  > command in the terminal for detailed information.
                 </p>
               </div>
             </div>
@@ -286,17 +382,22 @@ import Layout from '@layouts/Layout.astro';
               <div>
                 <h4 class="text-terminal-cyan font-bold mb-2">Security:</h4>
                 <ul class="space-y-1 text-terminal-gray">
+                  <li><code class="text-terminal-yellow">standards</code> - Coding standards</li>
                   <li><code class="text-terminal-yellow">gpg</code> - GPG info</li>
                   <li><code class="text-terminal-yellow">dco</code> - DCO requirements</li>
                   <li><code class="text-terminal-yellow">security</code> - Policies</li>
-                  <li><code class="text-terminal-yellow">contact</code> - Contact info</li>
                 </ul>
               </div>
             </div>
 
-            <div class="mt-4 p-3 bg-terminal-matrix-green bg-opacity-10 border border-terminal-matrix-green border-opacity-30 rounded">
+            <div
+              class="mt-4 p-3 bg-terminal-matrix-green bg-opacity-10 border border-terminal-matrix-green border-opacity-30 rounded"
+            >
               <p class="text-terminal-matrix-green text-sm">
-                🎯 <strong>Keyboard shortcuts:</strong> Tab for completion, ↑/↓ for history, Ctrl+L to clear, Ctrl+` to focus terminal
+                🎯 <strong>Keyboard shortcuts:</strong> Tab for completion, ↑/↓ for history, Ctrl+L to
+                clear, Ctrl+` to focus terminal<br />
+                💡 <strong>New:</strong> Try <code class="text-terminal-yellow">standards</code> command
+                to learn about our coding requirements!
               </p>
             </div>
           </div>
@@ -305,26 +406,40 @@ import Layout from '@layouts/Layout.astro';
           <div class="mt-8 text-center">
             <div class="inline-flex items-center space-x-2 mb-4">
               <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-                <img alt="Creative Commons License" 
-                     class="border-0" 
-                     src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+                <img
+                  alt="Creative Commons License"
+                  class="border-0"
+                  src="https://i.creativecommons.org/l/by/4.0/88x31.png"
+                />
               </a>
               <span class="text-terminal-gray text-sm">
-                This work is licensed under a 
-                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" class="text-terminal-yellow">
+                This work is licensed under a
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by/4.0/"
+                  class="text-terminal-yellow"
+                >
                   Creative Commons Attribution 4.0 International License
                 </a>
               </span>
             </div>
-            
+
             <!-- Attribution Credit -->
             <div class="text-terminal-gray text-xs opacity-75">
               <p class="mb-1">
-                Terminal interface concept inspired by the excellent work of 
-                <a href="https://github.com/m-mdy-m" class="text-terminal-cyan hover:text-terminal-white transition-colors duration-200">0x (m-mdy-m)</a>
+                Terminal interface concept inspired by the excellent work of
+                <a
+                  href="https://github.com/m-mdy-m"
+                  class="text-terminal-cyan hover:text-terminal-white transition-colors duration-200"
+                  >0x (m-mdy-m)</a
+                >
               </p>
               <p>
-                Original portfolio: <a href="https://m-mdy-m.github.io/" class="text-terminal-cyan hover:text-terminal-white transition-colors duration-200">m-mdy-m.github.io</a>
+                Original portfolio: <a
+                  href="https://m-mdy-m.github.io/"
+                  class="text-terminal-cyan hover:text-terminal-white transition-colors duration-200"
+                  >m-mdy-m.github.io</a
+                >
               </p>
             </div>
           </div>

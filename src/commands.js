@@ -111,6 +111,10 @@ const commandRegistry = {
     description: 'Display security policies and guidelines',
     execute: async () => generateSecurityOutput(),
   },
+  standards: {
+    description: 'Display Positronikal Coding Standards information',
+    execute: async () => generateStandardsOutput(),
+  },
 
   // System information commands
   uname: {
@@ -225,16 +229,16 @@ function successOutput(text) {
 
 function generateHelpOutput() {
   const categories = {
-    'System': ['help', 'about', 'whoami', 'clear', 'uname', 'neofetch', 'uptime'],
-    'Navigation': ['ls', 'cd', 'pwd', 'cat'],
-    'Projects': ['projects', 'ewftools', 'carnivore', 'davinci', 'doxygen', 'macports'],
-    'Security': ['gpg', 'dco', 'security'],
-    'Utilities': ['history', 'echo', 'date', 'github', 'contact', 'man', 'credits'],
-    'Extras': ['matrix']
+    System: ['help', 'about', 'whoami', 'clear', 'uname', 'neofetch', 'uptime'],
+    Navigation: ['ls', 'cd', 'pwd', 'cat'],
+    Projects: ['projects', 'ewftools', 'carnivore', 'davinci', 'doxygen', 'macports'],
+    Security: ['gpg', 'dco', 'security', 'standards'],
+    Utilities: ['history', 'echo', 'date', 'github', 'contact', 'man', 'credits'],
+    Extras: ['matrix'],
   };
 
   let output = `<h2 class="text-terminal-yellow text-xl mb-4">Positronikal Terminal - Available Commands:</h2><div class="grid grid-cols-1 md:grid-cols-2 gap-2 ml-4">`;
-  
+
   Object.entries(categories).forEach(([category, commands]) => {
     output += `<div class="mb-4"><h3 class="text-terminal-matrix-green font-bold mb-2">${category}:</h3>`;
     commands.forEach(cmd => {
@@ -749,6 +753,89 @@ function generateSecurityOutput() {
     </div>
   `;
 }
+
+function generateStandardsOutput() {
+  return `
+    <div class="cyber-card">
+      <h2 class="text-terminal-yellow text-xl mb-4 flex items-center">
+        <span class="mr-2">📋</span>
+        Positronikal Coding Standards
+      </h2>
+      
+      <div class="mb-4 p-4 bg-terminal-warning-amber bg-opacity-20 border border-terminal-warning-amber border-opacity-30 rounded">
+        <p class="text-terminal-white mb-3">
+          <strong>⚠️ MANDATORY COMPLIANCE:</strong> All contributors must read and adhere 
+          to the Positronikal Coding Standards before submitting any contributions.
+        </p>
+        <p class="text-terminal-error-red text-sm font-bold">
+          Non-compliance is grounds for pull request rejection and organization membership revocation.
+        </p>
+      </div>
+      
+      <div class="forensics-log">
+        <h3 class="text-terminal-forensics-blue font-bold mb-2">Framework Components:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <h4 class="text-terminal-matrix-green font-bold mb-2">Core Standards:</h4>
+            <ul class="list-disc list-inside space-y-1 text-terminal-gray">
+              <li>Code Formatting Rules (Unix Philosophy-based)</li>
+              <li>Repository Security Rules (CI/CD automation)</li>
+              <li>GitHub Configuration Standards</li>
+              <li>Git Hooks Standards (Automated enforcement)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-terminal-matrix-green font-bold mb-2">Specialized Addenda:</h4>
+            <ul class="list-disc list-inside space-y-1 text-terminal-gray">
+              <li>Forensic Evidence Tool Standards</li>
+              <li>Daubert Compliance Requirements</li>
+              <li>Legal Discovery Preparation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-4">
+        <h3 class="text-terminal-matrix-green font-bold mb-2">Key Features:</h3>
+        <ul class="list-disc list-inside space-y-1 text-terminal-gray text-sm">
+          <li><strong>Modular approach:</strong> Core standards + specialized addenda</li>
+          <li><strong>Automated enforcement:</strong> Git hooks prevent non-compliant commits</li>
+          <li><strong>Security-focused:</strong> Comprehensive vulnerability scanning and CI/CD automation</li>
+          <li><strong>Legally aware:</strong> Addresses "your code might end up in court" scenarios</li>
+          <li><strong>Repository templates:</strong> Quick project setup for apps and web projects</li>
+          <li><strong>Reference materials:</strong> GNU standards, Google style guides, etc.</li>
+        </ul>
+      </div>
+      
+      <div class="mt-4 p-3 bg-terminal-info-cyan bg-opacity-20 border border-terminal-info-cyan border-opacity-30 rounded">
+        <h4 class="text-terminal-info-cyan font-bold mb-2">Unique Value Proposition:</h4>
+        <p class="text-terminal-white text-sm">
+          This is likely the only coding standards framework that addresses Daubert Standard 
+          compliance for forensic tools, bridging the gap between development best practices 
+          and legal/compliance requirements.
+        </p>
+      </div>
+      
+      <div class="mt-4 text-terminal-yellow">
+        <p><strong>Repository:</strong> 
+          <a href="https://github.com/Positronikal/PositronikalCodingStandards" 
+             class="project-link"
+             target="_blank" rel="noopener noreferrer">
+            github.com/Positronikal/PositronikalCodingStandards
+          </a>
+        </p>
+      </div>
+      
+      <div class="mt-4 p-3 bg-terminal-matrix-green bg-opacity-20 border border-terminal-matrix-green border-opacity-30 rounded">
+        <p class="text-terminal-matrix-green text-sm">
+          💡 <strong>Target Audiences:</strong> General developers wanting security-focused standards, 
+          forensic tool developers needing legal compliance guidance, and organizations requiring 
+          enterprise-grade development practices.
+        </p>
+      </div>
+    </div>
+  `;
+}
 function generateCreditsOutput() {
   return `
     <div class="space-y-4">
@@ -964,7 +1051,7 @@ function createMatrixEffect() {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789日本ハッカー';
   const matrix = document.createElement('div');
   matrix.className = 'fixed inset-0 pointer-events-none z-50 opacity-50';
-  
+
   // Create falling matrix columns
   for (let i = 0; i < 50; i++) {
     const column = document.createElement('div');
@@ -972,22 +1059,22 @@ function createMatrixEffect() {
     column.style.left = Math.random() * 100 + '%';
     column.style.top = '-100px';
     column.style.whiteSpace = 'pre';
-    
+
     // Create column of characters
     let columnText = '';
     for (let j = 0; j < 30; j++) {
       columnText += chars[Math.floor(Math.random() * chars.length)] + '\n';
     }
     column.textContent = columnText;
-    
+
     // Animate the column falling
     const animationDuration = Math.random() * 3 + 2; // 2-5 seconds
     const delay = Math.random() * 2; // 0-2 second delay
-    
+
     column.style.animation = `matrix-fall ${animationDuration}s linear ${delay}s infinite`;
     matrix.appendChild(column);
   }
-  
+
   // Add CSS animation if not already present
   if (!document.querySelector('#matrix-animation-style')) {
     const style = document.createElement('style');
@@ -1002,9 +1089,9 @@ function createMatrixEffect() {
     `;
     document.head.appendChild(style);
   }
-  
+
   document.body.appendChild(matrix);
-  
+
   // Clean up after 8 seconds
   setTimeout(() => {
     if (matrix.parentNode) {

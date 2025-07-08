@@ -1,0 +1,44 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "America/Chicago"
+    open-pull-requests-limit: 3
+    allow:
+      - dependency-type: "security"
+      - dependency-type: "production"
+    reviewers:
+      - "Positronikal"
+    assignees:
+      - "Positronikal"
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "security"
+    
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Chicago"
+    open-pull-requests-limit: 2
+    reviewers:
+      - "Positronikal"
+    assignees:
+      - "Positronikal"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    labels:
+      - "github-actions"
+      - "security"

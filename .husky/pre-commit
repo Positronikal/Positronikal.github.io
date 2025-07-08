@@ -1,0 +1,52 @@
+#!/usr/bin/env sh
+# Husky pre-commit hook for Positronikal repositories
+# Enforces coding standards and security requirements
+
+echo "🔍 Positronikal pre-commit checks..."
+
+# Run lint-staged (prettier formatting)
+echo "📝 Formatting code with Prettier..."
+if ! pnpm run pre-commit; then
+    echo "❌ Code formatting failed!"
+    echo "   Please fix formatting issues and try again."
+    exit 1
+fi
+
+# Security checks
+echo "🔒 Running security checks..."
+
+# Check for potential secrets
+echo "   Checking for potential secrets..."
+# More sophisticated secret detection - avoid false positives from documentation
+if git diff --cached --name-only | grep -v -E "\.(md|yml|yaml|json)$" | xargs grep -l -E "(password|secret|key|token|api_key)\s*[=:]\s*['\"][^'\"]{8,}" 2>/dev/null; then
+    echo "❌ Potential secrets detected in staged files!"
+    echo "   Please review and remove any sensitive information before committing."
+    git diff --cached --name-only | grep -v -E "\.(md|yml|yaml|json)$" | xargs grep -n -E "(password|secret|key|token|api_key)\s*[=:]\s*['\"][^'\"]{8,}" 2>/dev/null || true
+    exit 1
+fi
+
+# Check for actual credential patterns in all files (more specific)
+if git diff --cached --name-only | grep -v -E "(\.husky/|\.github/|\.(md|yml|yaml|json)$)" | xargs grep -l -E "(sk_live_|pk_live_|ghp_|gho_|github_pat_)" 2>/dev/null; then
+    echo "❌ Real credentials detected in staged files!"
+    echo "   Actual API keys or tokens found - please remove immediately."
+    git diff --cached --name-only | grep -v -E "(\.husky/|\.github/|\.(md|yml|yaml|json)$)" | xargs grep -n -E "(sk_live_|pk_live_|ghp_|gho_|github_pat_)" 2>/dev/null || true
+    exit 1
+fi
+
+# Verify GPG signing will work
+echo "   Verifying GPG configuration..."
+if ! git config user.signingkey > /dev/null; then
+    echo "⚠️  GPG signing key not configured!"
+    echo "   Please configure your GPG key: git config user.signingkey YOUR_KEY_ID"
+    echo "   Then enable signing: git config commit.gpgsign true"
+    echo "   Continuing anyway, but remember to sign your commits!"
+fi
+
+# Check for TODO/FIXME in staged files (optional warning)
+if git diff --cached --name-only | xargs grep -l -E "(TODO|FIXME|XXX|HACK)" 2>/dev/null; then
+    echo "⚠️  Found TODO/FIXME items in staged files:"
+    git diff --cached --name-only | xargs grep -n -E "(TODO|FIXME|XXX|HACK)" 2>/dev/null || true
+    echo "   Consider addressing these before committing."
+fi
+
+echo "✅ Pre-commit checks completed!"
