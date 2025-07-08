@@ -1,0 +1,43 @@
+name: CI - Minimal Security Check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  basic-check:
+    name: Basic Quality Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies and build
+        run: |
+          # Use npm to install pnpm if not available
+          npm install -g pnpm@9
+          pnpm install --frozen-lockfile
+          pnpm build
+
+      - name: Basic security check
+        run: |
+          echo "Running basic security checks..."
+          # Check for potential secrets (basic patterns)
+          if grep -r -i "password\|secret\|key\|token" dist/ --include="*.html" --include="*.js" --include="*.css" 2>/dev/null; then
+            echo "Warning: Potential secrets found in build output"
+          fi
+          echo "Basic checks completed"
