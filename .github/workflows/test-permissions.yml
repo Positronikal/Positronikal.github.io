@@ -1,0 +1,13 @@
+name: Test Actions Permissions
+on: 
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test basic action
+        run: echo "Testing if actions work at all"
+      - name: Test checkout action
+        uses: actions/checkout@v4
+      - name: Confirm success
+        run: echo "Actions permissions working!"
