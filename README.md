@@ -145,3 +145,4 @@ The site features an interactive terminal with various commands:
 ---
 
 _Building the future of digital forensics, one terminal command at a time._
+# Test after permissions fix
