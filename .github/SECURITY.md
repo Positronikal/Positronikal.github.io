@@ -4,10 +4,10 @@
 
 We provide security updates for the following versions:
 
-| Version | Supported          |
-| ------- | ------------------ |
-| Latest  | :white_check_mark: |
-| < Latest| :x:                |
+| Version  | Supported          |
+| -------- | ------------------ |
+| Latest   | :white_check_mark: |
+| < Latest | :x:                |
 
 ## Reporting a Vulnerability
 
@@ -34,7 +34,7 @@ Please provide:
 #### Response Timeline
 
 | Severity | Initial Response | Status Update | Resolution Target |
-|----------|------------------|---------------|-------------------|
+| -------- | ---------------- | ------------- | ----------------- |
 | Critical | 24 hours         | 48 hours      | 7 days            |
 | High     | 48 hours         | 72 hours      | 14 days           |
 | Medium   | 72 hours         | 1 week        | 30 days           |
@@ -85,4 +85,4 @@ We will not pursue legal action against security researchers who:
 
 ---
 
-*This security policy is aligned with the Positronikal Repository Security Rules and is subject to updates as security practices evolve.*
+_This security policy is aligned with the Positronikal Repository Security Rules and is subject to updates as security practices evolve._

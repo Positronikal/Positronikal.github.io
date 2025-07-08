@@ -1,5 +1,4 @@
 // Complete commands.js file with all functions
-import { buildVirtualFS } from './tree';
 
 const contentModules = import.meta.glob('/src/content/**/*.md', { eager: true });
 
@@ -1037,67 +1036,6 @@ function generateManOutput(command) {
     return errorOutput(`No manual entry for ${command}`);
   }
   return `<h2 class="text-terminal-yellow">Manual: ${command}</h2><p class="text-terminal-gray">${cmd.description}</p>`;
-}
-
-function getCommandSynopsis(command) {
-  return command;
-}
-
-function getCommandDescription(command) {
-  return commandRegistry[command]?.description || 'No description available.';
-}
-
-function createMatrixEffect() {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789日本ハッカー';
-  const matrix = document.createElement('div');
-  matrix.className = 'fixed inset-0 pointer-events-none z-50 opacity-50';
-
-  // Create falling matrix columns
-  for (let i = 0; i < 50; i++) {
-    const column = document.createElement('div');
-    column.className = 'absolute text-terminal-matrix-green font-mono text-xs';
-    column.style.left = Math.random() * 100 + '%';
-    column.style.top = '-100px';
-    column.style.whiteSpace = 'pre';
-
-    // Create column of characters
-    let columnText = '';
-    for (let j = 0; j < 30; j++) {
-      columnText += chars[Math.floor(Math.random() * chars.length)] + '\n';
-    }
-    column.textContent = columnText;
-
-    // Animate the column falling
-    const animationDuration = Math.random() * 3 + 2; // 2-5 seconds
-    const delay = Math.random() * 2; // 0-2 second delay
-
-    column.style.animation = `matrix-fall ${animationDuration}s linear ${delay}s infinite`;
-    matrix.appendChild(column);
-  }
-
-  // Add CSS animation if not already present
-  if (!document.querySelector('#matrix-animation-style')) {
-    const style = document.createElement('style');
-    style.id = 'matrix-animation-style';
-    style.textContent = `
-      @keyframes matrix-fall {
-        0% { transform: translateY(-100vh); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translateY(100vh); opacity: 0; }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  document.body.appendChild(matrix);
-
-  // Clean up after 8 seconds
-  setTimeout(() => {
-    if (matrix.parentNode) {
-      matrix.parentNode.removeChild(matrix);
-    }
-  }, 8000);
 }
 
 export { commandRegistry, textOutput, errorOutput, warningOutput, successOutput };

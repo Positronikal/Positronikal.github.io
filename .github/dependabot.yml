@@ -1,44 +1,44 @@
 version: 2
 updates:
   # Enable version updates for npm
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "08:00"
-      timezone: "America/Chicago"
+      interval: 'weekly'
+      day: 'monday'
+      time: '08:00'
+      timezone: 'America/Chicago'
     open-pull-requests-limit: 3
     allow:
-      - dependency-type: "security"
-      - dependency-type: "production"
+      - dependency-type: 'security'
+      - dependency-type: 'production'
     reviewers:
-      - "Positronikal"
+      - 'Positronikal'
     assignees:
-      - "Positronikal"
+      - 'Positronikal'
     commit-message:
-      prefix: "chore(deps)"
-      include: "scope"
+      prefix: 'chore(deps)'
+      include: 'scope'
     labels:
-      - "dependencies"
-      - "security"
-    
+      - 'dependencies'
+      - 'security'
+
   # Enable version updates for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "America/Chicago"
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
+      timezone: 'America/Chicago'
     open-pull-requests-limit: 2
     reviewers:
-      - "Positronikal"
+      - 'Positronikal'
     assignees:
-      - "Positronikal"
+      - 'Positronikal'
     commit-message:
-      prefix: "ci"
-      include: "scope"
+      prefix: 'ci'
+      include: 'scope'
     labels:
-      - "github-actions"
-      - "security"
+      - 'github-actions'
+      - 'security'

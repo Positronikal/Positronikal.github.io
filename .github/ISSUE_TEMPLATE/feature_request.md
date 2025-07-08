@@ -14,6 +14,7 @@ A clear and concise description of what feature you'd like to see implemented.
 ## Security Impact Assessment
 
 **Security Considerations:**
+
 - [ ] This feature has no security implications
 - [ ] This feature requires security considerations (describe below)
 - [ ] This feature enhances security posture
@@ -39,14 +40,16 @@ A clear and concise description of any alternative solutions or features you've 
 ## Implementation Considerations
 
 **Technical aspects:**
+
 - [ ] Frontend changes required
-- [ ] Backend changes required  
+- [ ] Backend changes required
 - [ ] Database changes required
 - [ ] API changes required
 - [ ] Documentation changes required
 - [ ] Testing strategy needed
 
 **Compatibility:**
+
 - [ ] Backward compatible
 - [ ] May break existing functionality (describe impact)
 - [ ] Requires migration strategy
@@ -54,11 +57,12 @@ A clear and concise description of any alternative solutions or features you've 
 ## User Impact
 
 **Who will benefit from this feature?**
+
 - [ ] End users
 - [ ] Contributors
 - [ ] Maintainers
 - [ ] Security researchers
-- [ ] Other (specify): ___________
+- [ ] Other (specify): \***\*\_\_\_\*\***
 
 **Usage scenarios:**
 Describe specific use cases where this feature would be valuable.
@@ -66,6 +70,7 @@ Describe specific use cases where this feature would be valuable.
 ## Acceptance Criteria
 
 **Definition of Done:**
+
 - [ ] Feature works as described
 - [ ] No security vulnerabilities introduced
 - [ ] Properly documented
@@ -82,6 +87,7 @@ Add any other context, screenshots, mockups, or examples about the feature reque
 ## Verification
 
 **Before submitting, I have:**
+
 - [ ] Checked that this feature hasn't been requested already
 - [ ] Considered the security implications
 - [ ] Provided sufficient detail for implementation

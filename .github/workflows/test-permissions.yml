@@ -1,5 +1,5 @@
 name: Test Actions Permissions
-on: 
+on:
   workflow_dispatch:
 jobs:
   test:

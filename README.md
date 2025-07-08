@@ -16,7 +16,7 @@ This is the new Astro 5-based website for Positronikal, featuring a cybersecurit
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - pnpm 9+
 
 ### Installation
@@ -46,18 +46,21 @@ pnpm preview
 ## Features
 
 ### Interactive Terminal
+
 - Fully functional command-line interface
 - Command history and tab completion
 - Custom commands for project information
 - Real-time system information
 
 ### Security Focus
+
 - GPG signature requirements
 - Developer Certificate of Origin (DCO) compliance
 - Security-first development practices
 - Professional forensics standards
 
 ### Cybersecurity Aesthetic
+
 - Matrix-style animations
 - Terminal green color scheme
 - CRT overlay effects
@@ -81,12 +84,14 @@ src/
 The site features an interactive terminal with various commands:
 
 ### Information
+
 - `help` - Show all available commands
 - `about` - About Positronikal
 - `whoami` - User information
 - `neofetch` - System information display
 
 ### Projects
+
 - `projects` - List all projects
 - `ewftools` - EWF tools information
 - `carnivore` - CarnivoreLE details
@@ -94,12 +99,14 @@ The site features an interactive terminal with various commands:
 - `macports` - macportsAssistant details
 
 ### Security
+
 - `gpg` - GPG key information
 - `dco` - DCO requirements
 - `security` - Security policies
 - `contact` - Contact information
 
 ### System
+
 - `ls` - List directory contents
 - `cd` - Change directory
 - `pwd` - Print working directory
@@ -110,12 +117,14 @@ The site features an interactive terminal with various commands:
 ## Contributing
 
 ### Requirements
+
 - All commits must be GPG signed
 - Developer Certificate of Origin (DCO) on file
 - Follow GNU coding standards
 - Adhere to UNIX philosophy
 
 ### Security
+
 - GPG public key verification required
 - Secure development practices
 - Vulnerability disclosure via secure channels
@@ -135,4 +144,4 @@ The site features an interactive terminal with various commands:
 
 ---
 
-*Building the future of digital forensics, one terminal command at a time.*
+_Building the future of digital forensics, one terminal command at a time._

@@ -14,6 +14,7 @@ A clear and concise description of what the bug is.
 ## Security Considerations
 
 **⚠️ Security Impact Assessment:**
+
 - [ ] This bug has no security implications
 - [ ] This bug may have security implications (describe below)
 - [ ] This is a security vulnerability (use private reporting channels)
@@ -23,6 +24,7 @@ A clear and concise description of what the bug is.
 ## Environment
 
 **System Information:**
+
 - OS: [e.g., Windows 11, macOS 14, Ubuntu 22.04]
 - Browser: [e.g., Chrome 120, Firefox 121, Safari 17]
 - Version: [e.g., v1.0.0]
@@ -31,6 +33,7 @@ A clear and concise description of what the bug is.
 ## Reproduction Steps
 
 **Steps to reproduce the behavior:**
+
 1. Go to '...'
 2. Click on '...'
 3. Scroll down to '...'
@@ -51,6 +54,7 @@ If applicable, add screenshots or logs to help explain your problem.
 ## Additional Context
 
 **Impact Assessment:**
+
 - [ ] Minor visual issue
 - [ ] Functional limitation
 - [ ] Major functionality broken
@@ -63,6 +67,7 @@ Add any other context about the problem here.
 ## Verification
 
 **Before submitting, I have:**
+
 - [ ] Checked that this issue hasn't been reported already
 - [ ] Provided all necessary information above
 - [ ] Tested on the latest version

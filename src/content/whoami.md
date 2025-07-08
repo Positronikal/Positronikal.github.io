@@ -42,4 +42,4 @@ I'm always open to collaboration on forensic tools, security research, and educa
 
 ---
 
-*"Building tools that help investigators uncover the truth, one bit at a time."*
+_"Building tools that help investigators uncover the truth, one bit at a time."_

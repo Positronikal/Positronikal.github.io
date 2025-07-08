@@ -12,7 +12,11 @@
 
   body {
     @apply min-h-screen p-0 m-0 relative overflow-x-hidden;
-    background-image: radial-gradient(ellipse at center, rgba(0, 255, 65, 0.05) 0%, rgba(0, 0, 0, 1) 70%);
+    background-image: radial-gradient(
+      ellipse at center,
+      rgba(0, 255, 65, 0.05) 0%,
+      rgba(0, 0, 0, 1) 70%
+    );
   }
 
   /* CRT overlay effects */
@@ -233,28 +237,28 @@
     /* Small screens: standard responsive behavior */
     max-width: 100%;
   }
-  
+
   /* Medium screens (tablets): similar to current 1024x768 optimization */
   @media (min-width: 768px) and (max-width: 1279px) {
     .main-container {
       max-width: 95%;
     }
   }
-  
+
   /* Large screens (1280px+): scale up for 1920x1080 while maintaining frame */
   @media (min-width: 1280px) {
     .main-container {
       max-width: 85%;
     }
   }
-  
+
   /* Extra large screens (1536px+): optimal for 1920x1080 and larger */
   @media (min-width: 1536px) {
     .main-container {
       max-width: 80%;
     }
   }
-  
+
   /* Very large screens (1920px+): maintain proportional framing */
   @media (min-width: 1920px) {
     .main-container {
@@ -280,20 +284,20 @@
     min-height: 300px;
     height: 500px;
   }
-  
+
   /* Responsive terminal height - larger on bigger screens */
   @media (min-width: 768px) {
     .cli-body {
       height: 600px;
     }
   }
-  
+
   @media (min-width: 1024px) {
     .cli-body {
       height: 700px;
     }
   }
-  
+
   @media (min-width: 1280px) {
     .cli-body {
       height: 768px;
@@ -305,26 +309,26 @@
     /* Base height for smaller screens */
     max-height: 400px;
   }
-  
+
   /* Responsive terminal output height - larger on bigger screens */
   @media (min-width: 768px) {
     .terminal-output-area {
       max-height: 500px;
     }
   }
-  
+
   @media (min-width: 1024px) {
     .terminal-output-area {
       max-height: 600px;
     }
   }
-  
+
   @media (min-width: 1280px) {
     .terminal-output-area {
       max-height: 768px;
     }
   }
-  
+
   @media (min-width: 1920px) {
     .terminal-output-area {
       max-height: 800px;
@@ -357,7 +361,11 @@
 
   /* Matrix effect backgrounds */
   .matrix-bg {
-    background: radial-gradient(ellipse at center, rgba(0, 255, 65, 0.1) 0%, rgba(0, 0, 0, 0.9) 70%);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 255, 65, 0.1) 0%,
+      rgba(0, 0, 0, 0.9) 70%
+    );
   }
 
   /* Glitch effects for headers */
@@ -522,50 +530,52 @@
   .license-badge {
     @apply inline-flex items-center px-2 py-1 text-xs font-bold bg-terminal-green bg-opacity-20 text-terminal-green border border-terminal-green rounded;
   }
-  
+
   /* Terminal roll-up functionality */
   #terminal-toggle {
     @apply cursor-pointer select-none;
     transition: all 0.2s ease;
   }
-  
+
   #terminal-toggle:hover {
     @apply scale-105;
     text-shadow: 0 0 8px currentColor;
   }
-  
+
   #terminal-toggle:active {
     @apply scale-95;
   }
-  
+
   /* Terminal toggle container */
   #terminal-toggle:hover + * {
     box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
   }
-  
+
   #terminal-content {
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition:
+      max-height 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
   }
-  
+
   /* Enhanced traffic lights with subtle hover */
   .cli-traffic-light {
     transition: all 0.2s ease;
   }
-  
+
   .cli-traffic-light:hover {
     @apply scale-110;
     box-shadow: 0 0 8px currentColor;
   }
-  
+
   /* Terminal toggle box styling */
   .terminal-toggle-box {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 255, 0, 0.1) 100%);
     box-shadow: inset 0 1px 2px rgba(255, 255, 0, 0.2);
   }
-  
+
   .terminal-toggle-box:hover {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 0, 0.2) 100%);
-    box-shadow: 
+    box-shadow:
       inset 0 1px 2px rgba(255, 255, 0, 0.3),
       0 0 15px rgba(255, 255, 0, 0.2);
   }

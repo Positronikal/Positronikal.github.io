@@ -29,7 +29,7 @@ module.exports = {
       },
       fontFamily: {
         mono: ['"IBM Plex Mono"', '"Fira Code"', 'Consolas', 'Monaco', 'monospace'],
-        'cyber': ['"IBM Plex Mono"', '"Source Code Pro"', 'monospace'],
+        cyber: ['"IBM Plex Mono"', '"Source Code Pro"', 'monospace'],
       },
       animation: {
         blink: 'blink 1s step-end infinite',
@@ -81,16 +81,18 @@ module.exports = {
       backgroundImage: {
         'crt-overlay':
           'linear-gradient(transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.05) 3%, rgba(32, 128, 32, 0.05) 3%, transparent 4%)',
-        'matrix-bg': 'radial-gradient(ellipse at center, rgba(0, 255, 65, 0.1) 0%, rgba(0, 0, 0, 0.9) 70%)',
-        'cyber-grid': 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 255, 0, 0.1) 2px, rgba(0, 255, 0, 0.1) 4px)',
+        'matrix-bg':
+          'radial-gradient(ellipse at center, rgba(0, 255, 65, 0.1) 0%, rgba(0, 0, 0, 0.9) 70%)',
+        'cyber-grid':
+          'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 255, 0, 0.1) 2px, rgba(0, 255, 0, 0.1) 4px)',
       },
       boxShadow: {
-        'terminal': '0 0 20px rgba(0, 255, 0, 0.3)',
+        terminal: '0 0 20px rgba(0, 255, 0, 0.3)',
         'cyber-glow': '0 0 30px rgba(0, 255, 65, 0.5)',
         'hack-glow': '0 0 40px rgba(51, 255, 51, 0.6)',
       },
       backdropBlur: {
-        'terminal': '8px',
+        terminal: '8px',
       },
     },
   },

@@ -7,14 +7,11 @@ export default defineConfig({
   base: '/',
   output: 'static',
   trailingSlash: 'never',
-  integrations: [
-    tailwind(),
-    sitemap()
-  ],
+  integrations: [tailwind(), sitemap()],
   markdown: {
     shikiConfig: {
       theme: 'material-theme-darker',
-      wrap: true
-    }
-  }
+      wrap: true,
+    },
+  },
 });
