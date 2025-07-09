@@ -98,3 +98,6 @@ temp/
 *.njsproj
 *.sln
 *.sw?
+
+# Project reference materials (internal use only)
+ref/
