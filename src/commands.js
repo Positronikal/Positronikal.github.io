@@ -232,7 +232,7 @@ function generateHelpOutput() {
     'System': ['help', 'about', 'whoami', 'clear', 'uname', 'neofetch', 'uptime'],
     'Navigation': ['ls', 'cd', 'pwd', 'cat'],
     'Projects': ['projects', 'ewftools', 'carnivore', 'davinci', 'doxygen', 'macports'],
-    'Security': ['gpg', 'dco', 'security'],
+    'Security': ['standards', 'gpg', 'dco', 'security'],
     'Utilities': ['history', 'echo', 'date', 'github', 'contact', 'man', 'credits'],
     'Extras': ['matrix']
   };
@@ -275,60 +275,6 @@ function generateAboutOutput() {
               <li>Open source contributor</li>
             </ul>
           </div>
-      
-      <div class="cyber-card">
-        <h3 class="text-terminal-matrix-green font-bold mb-3 flex items-center">
-          <span class="mr-2">🤖</span>
-          AI Development Partner
-        </h3>
-        <p class="text-terminal-white mb-3">
-          This cybersecurity platform was developed in collaboration with 
-          <a href="https://claude.ai" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Claude</a>, 
-          an AI assistant created by 
-          <a href="https://anthropic.com" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Anthropic</a>. 
-          From terminal roll-up functionality to GitHub Flow implementation, every feature was 
-          built through collaborative problem-solving and iterative development.
-        </p>
-        <div class="text-terminal-gray text-sm">
-          <p class="mb-2">
-            💻 <strong class="text-terminal-warning-amber">Technical contributions:</strong> 
-            Astro 5 implementation, terminal interface design, cybersecurity theming, 
-            GitHub Flow workflow, and repository migration strategy.
-          </p>
-          <p>
-            🎯 <strong class="text-terminal-warning-amber">Partnership approach:</strong> 
-            Collaborative development, technical mentoring, and respectful of your vision 
-            and 20+ years of cybersecurity expertise.
-          </p>
-        </div>
-      </div>
-      
-      <div class="cyber-card">
-        <h3 class="text-terminal-matrix-green font-bold mb-3 flex items-center">
-          <span class="mr-2">🤖</span>
-          AI Development Partner
-        </h3>
-        <p class="text-terminal-white mb-3">
-          This cybersecurity platform was developed in collaboration with 
-          <a href="https://claude.ai" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Claude</a>, 
-          an AI assistant created by 
-          <a href="https://anthropic.com" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Anthropic</a>. 
-          From terminal roll-up functionality to GitHub Flow implementation, every feature was 
-          built through collaborative problem-solving and iterative development.
-        </p>
-        <div class="text-terminal-gray text-sm">
-          <p class="mb-2">
-            💻 <strong class="text-terminal-warning-amber">Technical contributions:</strong> 
-            Astro 5 implementation, terminal interface design, cybersecurity theming, 
-            GitHub Flow workflow, and repository migration strategy.
-          </p>
-          <p>
-            🎯 <strong class="text-terminal-warning-amber">Partnership approach:</strong> 
-            Collaborative development, technical mentoring, and respectful of your vision 
-            and 20+ years of cybersecurity expertise.
-          </p>
-        </div>
-      </div>
           
           <div>
             <h3 class="text-terminal-matrix-green font-bold mb-2">Focus Areas:</h3>
@@ -346,6 +292,101 @@ function generateAboutOutput() {
             All public projects emphasize security, reliability, and adherence to forensic standards.
             GPG signature verification and Developer Certificate of Origin are required for all contributions.
           </p>
+        </div>
+      </div>
+      
+      <div class="cyber-card">
+        <h3 class="text-terminal-matrix-green font-bold mb-3 flex items-center">
+          <span class="mr-2">🤖</span>
+          AI Development Partner
+        </h3>
+        <p class="text-terminal-white mb-3">
+          This cybersecurity platform was developed in collaboration with 
+          <a href="https://claude.ai" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Claude</a>, 
+          an AI assistant created by 
+          <a href="https://anthropic.com" class="text-terminal-cyan hover:text-terminal-white font-bold transition-colors duration-200">Anthropic</a>. 
+          From terminal roll-up functionality to GitHub Flow implementation, every feature was 
+          built through collaborative problem-solving and iterative development.
+        </p>
+        <div class="text-terminal-gray text-sm">
+          <p class="mb-2">
+            💻 <strong class="text-terminal-warning-amber">Technical contributions:</strong> 
+            Astro 5 implementation, terminal interface design, cybersecurity theming, 
+            GitHub Flow workflow, and repository migration strategy.
+          </p>
+          <p>
+            🎯 <strong class="text-terminal-warning-amber">Partnership approach:</strong> 
+            Collaborative development, technical mentoring, and respectful of your vision 
+            and 20+ years of cybersecurity expertise.
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function generateStandardsOutput() {
+  return `
+    <div class="cyber-card">
+      <h2 class="text-terminal-yellow text-xl mb-4">🚀 Positronikal Coding Standards</h2>
+      
+      <div class="mb-4 p-4 bg-terminal-matrix-green bg-opacity-20 border border-terminal-matrix-green border-opacity-30 rounded">
+        <p class="text-terminal-white mb-3">
+          <strong>🏗️ Battle-Tested Framework:</strong> A comprehensive coding standards framework with 
+          a unique modular approach - core standards that work for any project, plus specialized 
+          addenda for specific use cases. Based on 20+ years of forensics and security experience.
+        </p>
+      </div>
+      
+      <div class="forensics-log">
+        <h3 class="text-terminal-forensics-blue font-bold mb-2">📋 Framework Components:</h3>
+        <ul class="list-disc list-inside space-y-2 text-terminal-gray text-sm">
+          <li><strong>Core Standards:</strong> Code Formatting Rules (Unix Philosophy-based) + Repository Security Rules</li>
+          <li><strong>GitHub Actions Permissions Architecture:</strong> Systematic troubleshooting methodology for Actions configuration</li>
+          <li><strong>Forensic Evidence Tool Standards:</strong> Daubert compliance, legal discovery prep, chain of custody</li>
+          <li><strong>Repository Templates:</strong> Quick project setup with security-first configuration</li>
+          <li><strong>Reference Materials:</strong> GNU standards, Google style guides, and industry best practices</li>
+        </ul>
+      </div>
+      
+      <div class="mt-4 p-4 bg-terminal-warning-amber bg-opacity-20 border border-terminal-warning-amber border-opacity-30 rounded">
+        <h4 class="text-terminal-warning-amber font-bold mb-2">🎯 Unique Value Proposition:</h4>
+        <p class="text-terminal-white text-sm mb-2">
+          This is likely the only coding standards framework that addresses "your code might end up in court" 
+          scenarios with proper Daubert Standard compliance guidance - bridging the gap between development 
+          best practices and legal/compliance requirements.
+        </p>
+      </div>
+      
+      <div class="mt-4">
+        <h3 class="text-terminal-matrix-green font-bold mb-2">🎯 Target Audiences:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div class="p-3 bg-terminal-forensics-blue bg-opacity-20 border border-terminal-forensics-blue border-opacity-30 rounded">
+            <span class="text-terminal-cyan font-bold">General Developers</span>
+            <p class="text-terminal-gray text-xs mt-1">Solid, security-focused standards</p>
+          </div>
+          <div class="p-3 bg-terminal-forensics-blue bg-opacity-20 border border-terminal-forensics-blue border-opacity-30 rounded">
+            <span class="text-terminal-cyan font-bold">Forensic Tool Developers</span>
+            <p class="text-terminal-gray text-xs mt-1">Legal compliance guidance</p>
+          </div>
+          <div class="p-3 bg-terminal-forensics-blue bg-opacity-20 border border-terminal-forensics-blue border-opacity-30 rounded">
+            <span class="text-terminal-cyan font-bold">Organizations</span>
+            <p class="text-terminal-gray text-xs mt-1">Enterprise-grade practices</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-4 text-terminal-yellow">
+        <div class="flex flex-col space-y-2">
+          <a href="https://github.com/Positronikal/PositronikalCodingStandards" 
+             class="inline-flex items-center text-terminal-yellow hover:text-terminal-white font-bold transition-colors duration-200"
+             target="_blank" rel="noopener noreferrer">
+            <span class="mr-2">📖</span>
+            Positronikal Coding Standards Repository
+          </a>
+          <div class="text-terminal-gray text-xs">
+            Complete framework with templates, examples, and systematic implementation guidance
+          </div>
         </div>
       </div>
     </div>
