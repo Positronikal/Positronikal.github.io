@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      background-color: #0B0C10;
+      color: #E6E8E6;
+      font-family: 'Google Sans Flex', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+  
+    .teaser {
+      text-align: center;
+    }
+  
+    .teaser p {
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #E6E8E6;
+    }
+  
+    .teaser p:first-child {
+      margin-bottom: 3rem;
+    }
+  
+    .teaser p:last-child {
+      font-size: 2rem;
+      padding-left: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="teaser">
+    {{ content }}
+  </div>
+</body>
+</html>
