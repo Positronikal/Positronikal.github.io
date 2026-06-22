@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# pre-commit: fast, language-native formatting and static analysis (BLOCKING).
+#
+# No-op: this repo is Jekyll content (Liquid/Markdown/HTML/CSS), not a Ruby
+# application — there is no Ruby source for a linter to check. The meaningful
+# checks (build, link/HTML validation, dependency audit) run pre-push via
+# hooks/ci-check.sh instead.
+
+set -e
+
+echo "pre-commit: no fast checks configured for this repo (Jekyll content, no Ruby source)."
+echo "Pre-commit checks passed."
