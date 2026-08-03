@@ -35,6 +35,6 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 # Local/CI checks (hooks/ci-check.sh): link/HTML validation and gem
 # dependency vulnerability scanning.
 group :development do
-  gem "html-proofer", "~> 5.0"
+  gem "html-proofer", "~> 5.2"
   gem "bundler-audit", "~> 0.9"
 end
