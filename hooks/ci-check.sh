@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Single source of truth for CI/code-quality checks.
 # Invoked locally by hooks/pre-push (blocking) and by .github/workflows/ci.yml
-# (confirmation only) — both run this exact script so local and CI cannot drift.
+# (confirmation only) — both run this exact script so local and CI
+# cannot drift.
 set -e
 
 bundle install --quiet
