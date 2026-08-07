@@ -33,6 +33,11 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Suppress Sass deprecation warnings from minima 2.5.x (upstream issue;
+# minima 3.0 will resolve when it reaches stable release).
+sass:
+  quiet_deps: true
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
