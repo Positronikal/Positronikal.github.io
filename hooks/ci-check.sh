@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: CC-BY-4.0
 # Single source of truth for CI/code-quality checks.
 # Invoked locally by hooks/pre-push (blocking) and by .github/workflows/ci.yml
 # (confirmation only) — both run this exact script so local and CI
